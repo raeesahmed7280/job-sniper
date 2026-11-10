@@ -472,56 +472,6 @@
    "notified": false,
    "method": "prefilter"
   },
-  "8e8f258a35086619": {
-   "first_seen": "2026-11-09T20:39:15+00:00",
-   "last_seen": "2026-11-09T20:39:15+00:00",
-   "source": "sbp",
-   "title": "Information Technology Operations Department (On Contract)",
-   "url": "https://www.sbp.org.pk/careers/information-technology-operations-department-on-contract",
-   "eligible": false,
-   "notified": false,
-   "method": "heuristic"
-  },
-  "8cae1bfafcf17f20": {
-   "first_seen": "2026-11-09T20:39:15+00:00",
-   "last_seen": "2026-11-09T20:39:15+00:00",
-   "source": "sbp",
-   "title": "Cyber Security Department",
-   "url": "https://www.sbp.org.pk/careers/cyber-security-department-2026",
-   "eligible": false,
-   "notified": false,
-   "method": "heuristic"
-  },
-  "0e24697af1379c75": {
-   "first_seen": "2026-11-09T20:39:15+00:00",
-   "last_seen": "2026-11-09T20:39:15+00:00",
-   "source": "sbp",
-   "title": "Economic Analysts Training Scheme (EATS) - 7th Batch",
-   "url": "https://www.sbp.org.pk/careers/economic-analysts-training-scheme-eats-7th-batch",
-   "eligible": false,
-   "notified": false,
-   "method": "heuristic"
-  },
-  "dbde1d221ed72f11": {
-   "first_seen": "2026-11-09T20:39:15+00:00",
-   "last_seen": "2026-11-09T20:39:15+00:00",
-   "source": "sbp",
-   "title": "State Bank Officers Training Scheme (SBOTS) - 29th Batch",
-   "url": "https://www.sbp.org.pk/careers/state-bank-officers-training-scheme-sbots-29th-batch",
-   "eligible": false,
-   "notified": false,
-   "method": "heuristic"
-  },
-  "40146bef498798bf": {
-   "first_seen": "2026-11-09T20:39:15+00:00",
-   "last_seen": "2026-11-09T20:39:15+00:00",
-   "source": "sbp",
-   "title": "Raast Payments Pakistan (Private) Limited",
-   "url": "https://www.sbp.org.pk/careers/raast-payments-pakistan-private-limited-2026",
-   "eligible": false,
-   "notified": false,
-   "method": "heuristic"
-  },
   "89d6be0cc56afb24": {
    "first_seen": "2026-11-09T20:39:15+00:00",
    "last_seen": "2026-11-09T20:39:15+00:00",
