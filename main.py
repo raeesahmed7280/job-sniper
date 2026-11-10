@@ -385,6 +385,7 @@ def run_once(args) -> dict:
     to_push = llm_matches + (heuristic_matches if settings.notify_on_heuristic else [])
 
     delivered = 0
+    emailed = 0
     if heuristic_matches and not settings.notify_on_heuristic:
         log.warning("%d heuristic match(es) held back (NOTIFY_ON_HEURISTIC=false): %s",
                     len(heuristic_matches),
@@ -393,6 +394,9 @@ def run_once(args) -> dict:
         header = (f"**Job Sniper** — {len(to_push)} new match(es) for the "
                   f"Balochistan / Commerce profile")
         delivered = notifier.send_results(to_push, header=header)
+        # second channel: the same matches by email (skipped silently if unconfigured)
+        emailed = notifier.send_email(
+            to_push, header=f"{len(to_push)} new job match(es) for your Balochistan / commerce profile")
     elif to_push:
         log.info("--no-notify set: %d eligible job(s) not pushed", len(to_push))
 
@@ -404,7 +408,7 @@ def run_once(args) -> dict:
     print("\n" + notifier.summarize(results))
     print(f"\nRun finished in {time.time() - started:.1f}s | "
           f"scraped={len(postings)} duplicates={duplicate_count} new={len(fresh)} "
-          f"eligible={len(eligible)} notified={delivered} "
+          f"eligible={len(eligible)} discord={delivered} emailed={emailed} "
           f"llm_calls={ai_filter.llm_calls_made()}/{settings.max_llm_calls or '∞'}")
     print(f"State: {store.summary()}")
     print(f"Report: {report_path}")
@@ -503,6 +507,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--no-llm", action="store_true", help="use the offline heuristic filter")
     parser.add_argument("--no-notify", action="store_true", help="evaluate but do not push to Discord")
     parser.add_argument("--test-notify", action="store_true", help="send a test embed and exit")
+    parser.add_argument("--test-email", action="store_true",
+                        help="send a test email and exit (verifies the SMTP credentials)")
     parser.add_argument("--check-llm", action="store_true",
                         help="show the LLM routing (endpoint, key source, billing) and send one "
                              "live test request, then exit")
@@ -540,6 +546,9 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.test_notify:
         return 0 if notifier.send_test() else 0
+
+    if args.test_email:
+        return 0 if notifier.send_test_email() else 1
 
     if args.replay:
         replay(args.replay)

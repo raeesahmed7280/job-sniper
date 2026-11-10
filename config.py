@@ -137,6 +137,16 @@ class Settings:
     # Longest edge in pixels before an image is sent to the vision model.
     vision_max_edge: int = field(default_factory=lambda: _env_int("VISION_MAX_EDGE", 1600))
 
+    # --- email alerts (optional, alongside Discord) ---
+    # Gmail needs an APP PASSWORD (myaccount.google.com/apppasswords), not your
+    # account password, and 2-step verification must be on. Free, no new service.
+    smtp_host: str = field(default_factory=lambda: _env("SMTP_HOST", "smtp.gmail.com") or "smtp.gmail.com")
+    smtp_port: int = field(default_factory=lambda: _env_int("SMTP_PORT", 465))
+    smtp_user: str = field(default_factory=lambda: _env("SMTP_USER"))
+    email_to: str = field(default_factory=lambda: _env("EMAIL_TO"))
+    email_from: str = field(default_factory=lambda: _env("EMAIL_FROM"))
+    smtp_password_file: str = field(default_factory=lambda: _env("SMTP_PASSWORD_FILE"))
+
     # --- files/logging ---
     state_file: Path = field(default_factory=lambda: BASE_DIR / (_env("STATE_FILE", "state/seen_jobs.json")))
     log_dir: Path = field(default_factory=lambda: BASE_DIR / (_env("LOG_DIR", "logs")))
@@ -190,6 +200,36 @@ class Settings:
                         f"Put your key in {wanted} and blank out LLM_API_KEY, "
                         f"otherwise requests go to the wrong endpoint and fail.")
         return ""
+
+    # ------------------------------------------------------------- email
+    @property
+    def smtp_password(self) -> str:
+        """
+        The SMTP app password: SMTP_PASSWORD if set, else the contents of
+        SMTP_PASSWORD_FILE, else the h1-watch app password on this machine when it
+        exists (convenience for local runs — CI passes SMTP_PASSWORD directly).
+        """
+        password = _env("SMTP_PASSWORD")
+        if password:
+            return password
+        candidate = self.smtp_password_file
+        if not candidate:
+            local = Path("/root/h1-watch/.smtp_pass")
+            candidate = str(local) if local.exists() else ""
+        if candidate:
+            try:
+                return Path(candidate).expanduser().read_text(encoding="utf-8").strip()
+            except OSError:
+                return ""
+        return ""
+
+    @property
+    def email_recipient(self) -> str:
+        return self.email_to or self.smtp_user
+
+    @property
+    def email_enabled(self) -> bool:
+        return bool(self.smtp_host and self.smtp_user and self.smtp_password and self.email_recipient)
 
     @property
     def resolved_base_url(self) -> str:

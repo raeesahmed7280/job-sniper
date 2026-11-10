@@ -40,6 +40,12 @@ jobs:
       # --- secrets (Settings → Secrets and variables → Actions) ---
       DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      # --- optional email channel (leave the secrets unset to skip email) ---
+      SMTP_HOST: ${{ vars.SMTP_HOST || 'smtp.gmail.com' }}
+      SMTP_PORT: ${{ vars.SMTP_PORT || '465' }}
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      EMAIL_TO: ${{ secrets.EMAIL_TO || secrets.SMTP_USER }}
       # --- optional tuning, overridable per-repo via Variables (not secrets) ---
       LLM_PROVIDER: ${{ vars.LLM_PROVIDER || 'gemini' }}
       LLM_MODEL: ${{ vars.LLM_MODEL || 'gemini-3.8-flash' }}
@@ -97,6 +103,11 @@ jobs:
             missing=1
           fi
           [ "$missing" -eq 0 ] || exit 1
+          if [ -z "${SMTP_USER:-}" ] || [ -z "${SMTP_PASSWORD:-}" ]; then
+            echo "::notice::Email secrets (SMTP_USER/SMTP_PASSWORD) are not set — alerts will go to Discord only."
+          else
+            echo "Email channel configured: alerts will also be sent to ${EMAIL_TO:-$SMTP_USER}"
+          fi
           echo "Secrets present. Verifying the LLM endpoint and webhook:"
           python main.py --check-llm || echo "::warning::--check-llm reported a problem; continuing so the run can still use the offline heuristic."
 

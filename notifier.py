@@ -17,7 +17,11 @@ from __future__ import annotations
 
 import json
 import logging
+import smtplib
+import ssl
 import time
+from email.message import EmailMessage
+from html import escape as html_escape
 from typing import Any, Iterable, Optional
 
 import requests
@@ -168,6 +172,150 @@ def send_test(webhook_url: Optional[str] = None) -> bool:
     }
     ok = _post(payload, webhook_url)
     print("Webhook test:", "DELIVERED ✅" if ok else "FAILED ❌ (check the URL)")
+    return ok
+
+
+# =====================================================================
+#  Email alerts (optional second channel — Gmail SMTP, stdlib only)
+# =====================================================================
+def _email_bodies(results: list[EligibilityResult], header: str = "") -> tuple[str, str]:
+    """
+    Build the (plain-text, HTML) bodies for the same results that go to Discord.
+    The plain-text part matters: some clients and mobile previews never render HTML.
+    """
+    eligible = [r for r in results if r.eligible]
+    intro = header or f"{len(eligible)} new job match(es) for your Balochistan / commerce profile"
+
+    text_lines = [intro, "=" * len(intro), ""]
+    html_rows: list[str] = []
+    for index, result in enumerate(eligible, 1):
+        deadline = result.deadline or "not stated"
+        title = result.title or "Untitled post"
+        department = result.department or "—"
+        text_lines += [
+            f"{index}. {title}  [{result.scale_label}]",
+            f"   Department : {department}",
+            f"   Deadline   : {deadline}",
+            f"   Source     : {result.source.upper() or '—'}",
+            f"   Why        : {result.reason}",
+        ]
+        if result.ad_url:
+            text_lines.append(f"   Advertisement: {result.ad_url}")
+        if result.apply_url:
+            text_lines.append(f"   Apply here   : {result.apply_url}")
+        text_lines.append("")
+        html_rows.append(f"""
+      <tr>
+        <td style="padding:12px;border-bottom:1px solid #e5e7eb">
+          <div style="font:600 16px/1.35 system-ui,Segoe UI,Roboto,sans-serif;color:#111827">
+            {index}. {html_escape(title)}
+            <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;
+                         background:#ecfdf5;color:#065f46;font:600 12px system-ui;vertical-align:middle">
+              {html_escape(result.scale_label)}
+            </span>
+          </div>
+          <div style="margin-top:6px;font:14px/1.5 system-ui,Segoe UI,Roboto,sans-serif;color:#374151">
+            <strong>Department:</strong> {html_escape(department)}<br>
+            <strong>Deadline:</strong> {html_escape(str(deadline))}<br>
+            <strong>Source:</strong> {html_escape(result.source.upper() or '—')}<br>
+            <strong>Why:</strong> {html_escape(result.reason)}
+          </div>
+          <div style="margin-top:8px;font:14px system-ui">
+            {f'<a href="{html_escape(result.apply_url)}" style="color:#065f46">Application page</a>' if result.apply_url else ''}
+            {f' &nbsp;·&nbsp; <a href="{html_escape(result.ad_url)}" style="color:#065f46">Original advertisement</a>' if result.ad_url else ''}
+          </div>
+        </td>
+      </tr>""")
+
+    html_body = f"""<!doctype html><html><body style="margin:0;background:#f9fafb;padding:18px">
+  <div style="max-width:720px;margin:0 auto;background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden">
+    <div style="padding:16px 20px;background:#065f46;color:#ffffff;font:600 18px system-ui,Segoe UI,Roboto,sans-serif">
+      🎯 Job Sniper — {len(eligible)} match(es)
+    </div>
+    <table style="width:100%;border-collapse:collapse">{''.join(html_rows)}</table>
+    <div style="padding:12px 20px;font:12px system-ui;color:#6b7280">
+      Sent by Job Sniper · only LLM-verified matches are emailed · duplicates across
+      portals are suppressed automatically.
+    </div>
+  </div>
+</body></html>"""
+
+    text_lines.append("— Job Sniper (only LLM-verified matches; cross-portal duplicates suppressed)")
+    return "\n".join(text_lines), html_body
+
+
+def _smtp_send(subject: str, text_body: str, html_body: str,
+               recipient: str | None = None) -> bool:
+    """Send one message over Gmail-compatible SMTP. Returns True on success."""
+    if not settings.email_enabled:
+        log.warning("Email alerting is not configured (need SMTP_USER + an app password"
+                    " + EMAIL_TO) — skipping")
+        return False
+
+    recipient = recipient or settings.email_recipient
+    sender = settings.email_from or settings.smtp_user
+    message = EmailMessage()
+    message["Subject"] = subject
+    message["From"] = sender
+    message["To"] = recipient
+    message.set_content(text_body)
+    message.add_alternative(html_body, subtype="html")
+
+    host, port = settings.smtp_host, settings.smtp_port
+    try:
+        context = ssl.create_default_context()
+        if port == 465:
+            with smtplib.SMTP_SSL(host, port, context=context, timeout=45) as server:
+                server.login(settings.smtp_user, settings.smtp_password)
+                server.send_message(message)
+        else:
+            with smtplib.SMTP(host, port, timeout=45) as server:
+                server.starttls(context=context)
+                server.login(settings.smtp_user, settings.smtp_password)
+                server.send_message(message)
+        log.info("Email sent to %s via %s:%d (%d bytes of HTML)", recipient, host, port, len(html_body))
+        return True
+    except smtplib.SMTPAuthenticationError as exc:
+        log.error("Email login failed (%s) — Gmail needs an APP PASSWORD with 2-step "
+                  "verification enabled, not your account password", exc)
+        return False
+    except Exception as exc:
+        log.error("Email send failed: %s", exc)
+        return False
+
+
+def send_email(results: list[EligibilityResult], only_eligible: bool = True,
+               header: str = "") -> int:
+    """
+    Email the alerts. Returns the number of matches emailed (0 when there is
+    nothing to send or email is not configured). Never raises.
+    """
+    if not settings.email_enabled:
+        return 0
+    selected = [r for r in results if r.eligible] if only_eligible else list(results)
+    if not selected:
+        log.info("No eligible jobs to email")
+        return 0
+    subject_bits = [r.title for r in selected[:2] if r.title]
+    subject = (f"Job Sniper: {len(selected)} match(es) — " + "; ".join(subject_bits))[:150]
+    text_body, html_body = _email_bodies(selected, header=header)
+    return len(selected) if _smtp_send(subject, text_body, html_body) else 0
+
+
+def send_test_email() -> bool:
+    """`python main.py --test-email` — proves the SMTP credentials work."""
+    if not settings.email_enabled:
+        print("Email is not configured. Add to .env: SMTP_USER, SMTP_PASSWORD "
+              "(Gmail app password) and EMAIL_TO.")
+        return False
+    text_body = ("This is a Job Sniper SMTP test.\n\n"
+                 "If you can read this, daily job alerts will also arrive by email.\n")
+    html_body = ("<html><body style=\"font:14px system-ui\">"
+                 "<h2 style=\"color:#065f46\">Job Sniper — email test ✅</h2>"
+                 "<p>If you can read this, daily job alerts will also arrive by email.</p>"
+                 "</body></html>")
+    ok = _smtp_send("Job Sniper — email test", text_body, html_body)
+    print("Email test:", f"DELIVERED ✅ to {settings.email_recipient}" if ok else "FAILED ❌")
     return ok
 
 

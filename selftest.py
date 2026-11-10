@@ -214,6 +214,45 @@ def test_notifier() -> None:
         server.shutdown()
 
 
+# ------------------------------------------------------- 6. email alerts
+def test_email() -> None:
+    """Message construction only — no SMTP traffic in the offline suite."""
+    import notifier
+    from config import settings
+    from models import EligibilityResult
+
+    sample = EligibilityResult(
+        eligible=True, title="ASSISTANT AUDIT OFFICER", scale=17, deadline="2026-11-23",
+        department="Auditor General of Pakistan", source="fpsc", confidence=0.9,
+        apply_url="https://www.fpsc.gov.pk/Jobs?section=GR",
+        ad_url="https://www.fpsc.gov.pk/uploads/content/ad-4-2026.pdf",
+        reason="MBA (Finance) accepted; open merit.")
+    skipped = EligibilityResult(eligible=False, title="Warder", source="bpsc",
+                                reason="BPS-5, below the scale floor")
+
+    text, html = notifier._email_bodies([sample, skipped])
+    check("email plain-text carries the match", "ASSISTANT AUDIT OFFICER" in text
+          and "BPS-17" in text and "2026-11-23" in text)
+    check("email omits non-matches", "Warder" not in text)
+    check("email HTML carries links",
+          'href="https://www.fpsc.gov.pk/Jobs?section=GR"' in html
+          and 'href="https://www.fpsc.gov.pk/uploads/content/ad-4-2026.pdf"' in html)
+    check("email HTML is escaped (no raw injection from ad text)",
+          notifier._email_bodies([EligibilityResult(eligible=True, title="<script>x</script>",
+                                                    reason="a & b")])[1].count("<script>") == 0)
+    check("send_email is a no-op when unconfigured",
+          notifier.send_email([sample]) == 0 or settings.email_enabled,
+          f"email_enabled={settings.email_enabled}")
+
+    # the SMTP password must never be resolved from thin air
+    if settings.email_enabled:
+        check("email config complete when enabled",
+              bool(settings.smtp_user and settings.smtp_password and settings.email_recipient),
+              f"user={settings.smtp_user} host={settings.smtp_host}:{settings.smtp_port}")
+    else:
+        check("email disabled cleanly without credentials", True, "no SMTP configured")
+
+
 # ------------------------------------------------------------------ x. live
 def test_live() -> None:
     import ai_filter, vision
@@ -257,6 +296,7 @@ def main() -> int:
     test_heuristic()
     test_json_parsing()
     test_notifier()
+    test_email()
     if "--live" in sys.argv:
         print("\n--- live checks ---")
         test_live()

@@ -126,6 +126,38 @@ Pakistani networks — the block that hits the Discord *client* does not affect 
 
 ---
 
+### Optional: the same alerts by email (Gmail, free)
+
+Email is a **second channel that carries the same matches** — adding it does not replace or
+change Discord. It uses Gmail SMTP through the standard library, so there is nothing to install
+and nothing to pay.
+
+1. Enable 2-step verification on the Google account, then create an **App password** at
+   myaccount.google.com/apppasswords (16 characters). Your normal Gmail password will not work.
+2. In `.env`:
+
+```ini
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=you@gmail.com
+SMTP_PASSWORD=abcdefghijklmnop      # the app password
+EMAIL_TO=you@gmail.com              # defaults to SMTP_USER when blank
+```
+
+3. Verify with `python main.py --test-email` (prints `Email test: DELIVERED ✅`). Every later
+   run emails real matches automatically, alongside Discord.
+
+On GitHub Actions add `SMTP_USER`, `SMTP_PASSWORD` and `EMAIL_TO` as repository secrets; the
+workflow maps them and, if they are absent, logs a notice and posts to Discord only. Gmail SMTP
+is reachable from runners, so no extra configuration is required.
+
+Each email lists, per match: post title, BPS scale, department, deadline, source, the AI's
+reason, the application page and the direct link to the original advertisement PDF/image. It
+sends **only LLM-verified matches** (the same rule as Discord), and cross-portal duplicates are
+already suppressed before either channel sees them.
+
+---
+
 ## 5. Configure the LLM
 
 ```bash
