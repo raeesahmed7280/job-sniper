@@ -449,6 +449,17 @@ Reports and logs are **not** committed — they are uploaded as the
   `prompts/eligibility_system_prompt.md` produces a warning, not a failed run.
 - `timeout-minutes: 90` — a full 14-source run with LLM verdicts takes 20-45 minutes.
 
+### One caveat: some portals block datacenter IPs
+
+GitHub runners come from cloud IP ranges, and a few portals refuse those. Observed in the first
+real CI run: `health.balochistan.gov.pk` answered **HTTP 403 to the runner** while working
+normally from a home connection. The scraper logs the status and returns zero postings, so the run
+succeeds with slightly smaller coverage rather than failing. If a source matters to you and is
+missing from the CI logs, run that source locally, or add a proxy — the code needs no change.
+
+Also note the state step is a no-op when nothing changed (`No state changes to persist.`), which is
+the normal outcome once a portal's current ads are already in `state/seen_jobs.json`.
+
 ### Notes
 
 - **Branch protection:** if the default branch requires pull requests, the bot's push is
