@@ -537,6 +537,26 @@
    "eligible": false,
    "notified": false,
    "method": "heuristic"
+  },
+  "8e8f258a35086619": {
+   "first_seen": "2026-11-10T21:57:19+00:00",
+   "last_seen": "2026-11-10T22:03:12+00:00",
+   "source": "sbp",
+   "title": "Information Technology Operations Department (On Contract)",
+   "url": "https://www.sbp.org.pk/careers/information-technology-operations-department-on-contract",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "8cae1bfafcf17f20": {
+   "first_seen": "2026-11-10T21:57:34+00:00",
+   "last_seen": "2026-11-10T21:57:34+00:00",
+   "source": "sbp",
+   "title": "Cyber Security Department",
+   "url": "https://www.sbp.org.pk/careers/cyber-security-department-2026",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
   }
  },
  "posts": {},
