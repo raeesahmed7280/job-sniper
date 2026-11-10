@@ -1,0 +1,163 @@
+name: Job Sniper
+
+# Daily hunt for Balochistan / commerce-eligible government vacancies.
+# 13:00 UTC = 18:00 Pakistan Standard Time.
+on:
+  schedule:
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Scrape and extract only (no LLM calls, no Discord, state unchanged)"
+        type: boolean
+        default: false
+      sources:
+        description: "Comma-separated subset of portals (blank = all configured sources)"
+        type: string
+        default: ""
+      limit:
+        description: "Max advertisements per portal"
+        type: string
+        default: "6"
+
+# Needed because the last step commits the de-duplication memory back.
+permissions:
+  contents: write
+
+# Never let yesterday's run overlap today's — two runners writing state/
+# would race on the push and double-alert.
+concurrency:
+  group: job-sniper
+  cancel-in-progress: false
+
+jobs:
+  snipe:
+    name: Scrape → filter → notify
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    env:
+      # --- secrets (Settings → Secrets and variables → Actions) ---
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      # --- optional tuning, overridable per-repo via Variables (not secrets) ---
+      LLM_PROVIDER: ${{ vars.LLM_PROVIDER || 'gemini' }}
+      LLM_MODEL: ${{ vars.LLM_MODEL || 'gemini-3.8-flash' }}
+      MAX_LLM_CALLS_PER_RUN: ${{ vars.MAX_LLM_CALLS_PER_RUN || '60' }}
+      MAX_PDF_PAGES: ${{ vars.MAX_PDF_PAGES || '12' }}
+      # the report/log files are uploaded as artefacts instead of committed
+      LOG_LEVEL: INFO
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # full history so the rebase-before-push works
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          # 3.10+ is required; 3.12 is what this pipeline is developed against.
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Tesseract (OCR for scanned newspaper ads)
+        # Not optional in practice: FPSC/BPSC published ads are scanned PDFs and
+        # NTS/OTS ads are JPEGs. Without Tesseract every scanned ad falls through
+        # to the (slow, quota-hungry) LLM vision path.
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq tesseract-ocr
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
+          restore-keys: playwright-${{ runner.os }}-
+
+      - name: Install Playwright (Chromium + system deps)
+        # --with-deps is required on a bare runner: the browser needs system
+        # libraries that ubuntu-latest does not ship.
+        run: python -m playwright install --with-deps chromium
+
+      - name: Verify configuration
+        run: |
+          set -euo pipefail
+          missing=0
+          if [ -z "${DISCORD_WEBHOOK_URL:-}" ]; then
+            echo "::error::Secret DISCORD_WEBHOOK_URL is not set. Add it in Settings → Secrets and variables → Actions."
+            missing=1
+          fi
+          if [ -z "${GEMINI_API_KEY:-}" ]; then
+            echo "::error::Secret GEMINI_API_KEY is not set. Add it in Settings → Secrets and variables → Actions."
+            missing=1
+          fi
+          [ "$missing" -eq 0 ] || exit 1
+          echo "Secrets present. Verifying the LLM endpoint and webhook:"
+          python main.py --check-llm || echo "::warning::--check-llm reported a problem; continuing so the run can still use the offline heuristic."
+
+      - name: Warn if the documented prompt is out of date
+        run: python tools/export_prompt.py --check || echo "::warning::prompts/eligibility_system_prompt.md is stale — run tools/export_prompt.py locally."
+
+      - name: Run Job Sniper
+        run: |
+          ARGS=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+            if [ -n "${{ inputs.sources }}" ]; then ARGS="$ARGS --sources ${{ inputs.sources }}"; fi
+            if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          fi
+          echo "Running: python main.py $ARGS"
+          python main.py $ARGS
+        # NOTE: the runner is ephemeral, so state/ is committed back in the next step.
+
+      - name: Upload run artefacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: job-sniper-report-${{ github.run_number }}
+          if-no-files-found: ignore
+          retention-days: 30
+          path: |
+            reports/
+            logs/
+
+      - name: Persist de-duplication state
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run != true }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # state/ is listed in .gitignore (it holds runtime data), so a plain
+          # `git add state/` adds NOTHING and the memory would be lost every day.
+          # -f overrides that deliberately: seen_jobs.json is the whole point.
+          git add -f state/
+
+          if git diff --cached --quiet; then
+            echo "No state changes to persist."
+            exit 0
+          fi
+
+          git commit -m "Update seen jobs state [skip ci]"
+          # A manual run or a rerun can leave the remote ahead; rebase before pushing.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "State committed and pushed."
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "### Job Sniper run"
+            echo ""
+            echo "- Trigger: \`${{ github.event_name }}\`"
+            echo "- State file: \`state/seen_jobs.json\` (committed back in the previous step)"
+            echo "- Reports + logs: attached as the \`job-sniper-report-${{ github.run_number }}\` artefact"
+            echo ""
+            python tools/state_stats.py
+          } >> "$GITHUB_STEP_SUMMARY"

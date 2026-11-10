@@ -1,0 +1,22 @@
+# Job Sniper — Python dependencies
+# Install:  pip install -r requirements.txt
+# Then:     python -m playwright install chromium   (or use your system Chrome, see README)
+
+# --- scraping ---
+playwright>=1.44.0          # drives headless Chrome for JS/SPA portals (FPSC, PTS)
+beautifulsoup4>=4.12.0      # HTML parsing
+lxml>=5.0.0                 # fast BS4 parser backend
+
+# --- networking / config ---
+requests>=2.31.0            # HTTP client (portals, Discord webhook, LLM REST calls)
+python-dotenv>=1.0.0        # .env loading
+
+# --- document / image extraction ---
+pymupdf>=1.24.0             # PDF text layer + page rasterising (no system deps)
+
+# --- OCR ---
+pytesseract>=0.3.10         # Python wrapper for the Tesseract binary (optional path)
+pillow>=10.0.0              # image pre-processing before OCR
+
+# --- scheduler (optional, for --loop mode) ---
+schedule>=1.2.0

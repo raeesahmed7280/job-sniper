@@ -1,0 +1,13 @@
+# secrets — never commit
+.env
+
+# runtime artefacts
+state/
+logs/
+reports/
+samples/*.pdf
+samples/*.jpeg
+__pycache__/
+*.pyc
+.venv/
+probe_*.py
