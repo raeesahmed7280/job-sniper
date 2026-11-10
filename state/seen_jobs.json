@@ -1,0 +1,647 @@
+{
+ "version": 3,
+ "seen": {
+  "7e3bc7b2d10765f9": {
+   "first_seen": "2026-11-08T19:44:21+00:00",
+   "last_seen": "2026-11-08T19:44:21+00:00",
+   "source": "bpsc",
+   "title": "Addendum Dated 02-11-2026. Last date for submission of online application has been extended up to 17 November 2026.",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "eligible": false,
+   "notified": false
+  },
+  "692a5273b5853b77": {
+   "first_seen": "2026-11-08T19:45:05+00:00",
+   "last_seen": "2026-11-08T19:45:05+00:00",
+   "source": "bpsc",
+   "title": "Corrigendum for the posts of Junior Inspector of Mines (B-17) and Mines Rescue Instructor (B-17) (03-09-2026)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "eligible": false,
+   "notified": false
+  },
+  "4718e6739fcccef7": {
+   "first_seen": "2026-11-08T19:45:05+00:00",
+   "last_seen": "2026-11-08T19:45:05+00:00",
+   "source": "bpsc",
+   "title": "Corrigendum for the post of Assistant Electric Inspector (10-July-2026)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "eligible": false,
+   "notified": false
+  },
+  "b97102240bf4f9de": {
+   "first_seen": "2026-11-08T19:45:29+00:00",
+   "last_seen": "2026-11-08T19:45:29+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 1-3)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "notified": false,
+   "eligible": false
+  },
+  "5eab846abbca991b": {
+   "first_seen": "2026-11-08T19:45:33+00:00",
+   "last_seen": "2026-11-08T19:45:33+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 4-6)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "notified": true,
+   "eligible": true
+  },
+  "ec8e6d107b4328a7": {
+   "first_seen": "2026-11-08T19:45:36+00:00",
+   "last_seen": "2026-11-08T19:45:36+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 7-9)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "notified": false,
+   "eligible": false
+  },
+  "f510db567db30ffb": {
+   "first_seen": "2026-11-08T19:45:40+00:00",
+   "last_seen": "2026-11-08T19:45:40+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 10-12)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "notified": true,
+   "eligible": true
+  },
+  "854a30f7b5467b3a": {
+   "first_seen": "2026-11-08T19:45:45+00:00",
+   "last_seen": "2026-11-08T19:45:45+00:00",
+   "source": "bpsc",
+   "title": "Advertisement no 09-2026 (pages 1-3)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "notified": false,
+   "eligible": false
+  },
+  "a0a386c56c53d158": {
+   "first_seen": "2026-11-08T19:45:47+00:00",
+   "last_seen": "2026-11-08T19:45:47+00:00",
+   "source": "bpsc",
+   "title": "Advertisement no 09-2026 (pages 4)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "notified": false,
+   "eligible": false
+  },
+  "b92cadec408b699c": {
+   "first_seen": "2026-11-08T19:45:50+00:00",
+   "last_seen": "2026-11-08T19:45:50+00:00",
+   "source": "bpsc",
+   "title": "Advertisement No. 07/2026 (pages 1-3)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "notified": false,
+   "eligible": false
+  },
+  "39618c4670a44d27": {
+   "first_seen": "2026-11-08T19:45:52+00:00",
+   "last_seen": "2026-11-08T19:45:52+00:00",
+   "source": "bpsc",
+   "title": "Advertisement No. 07/2026 (pages 4)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "notified": false,
+   "eligible": false
+  },
+  "410dadc4b8c7c90f": {
+   "first_seen": "2026-11-08T19:45:54+00:00",
+   "last_seen": "2026-11-08T19:45:54+00:00",
+   "source": "nts",
+   "title": "Gujranwala Electric Power Company (GEPCO) Career Opportunities (Balochistan Quota)",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxNDAx",
+   "notified": true,
+   "eligible": true
+  },
+  "b9e041892fc57bae": {
+   "first_seen": "2026-11-08T19:45:56+00:00",
+   "last_seen": "2026-11-08T19:45:56+00:00",
+   "source": "nts",
+   "title": "Faisalabad Electric Supply Company Limited (FESCO) Career Opportunities",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzk5",
+   "notified": false,
+   "eligible": false
+  },
+  "774cc444cbc8096b": {
+   "first_seen": "2026-11-08T19:45:58+00:00",
+   "last_seen": "2026-11-08T19:45:58+00:00",
+   "source": "nts",
+   "title": "Graduate Assessment Test-GAT-General-VIII - 2026",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzc2",
+   "notified": false,
+   "eligible": false
+  },
+  "70d8d9c88086684a": {
+   "first_seen": "2026-11-08T19:45:59+00:00",
+   "last_seen": "2026-11-08T19:45:59+00:00",
+   "source": "nts",
+   "title": "Shaheed Zulfikar Ali Bhutto Institute of Science and Technology SZABIST(Special Test for MS Programs-I))",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzk2",
+   "notified": false,
+   "eligible": false
+  },
+  "58173e2ac98dc5ac": {
+   "first_seen": "2026-11-08T19:45:59+00:00",
+   "last_seen": "2026-11-08T19:45:59+00:00",
+   "source": "nts",
+   "title": "Hub & Spoke Model at Zahir Pir RYK Sheikh Zayed Medical College / Hospital Rahim Yar Khan - Vacant Position (Specialized Healthcare & Medical Education Department)",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzky",
+   "notified": false,
+   "eligible": false
+  },
+  "06882c38b63fc475": {
+   "first_seen": "2026-11-08T19:46:01+00:00",
+   "last_seen": "2026-11-08T19:46:01+00:00",
+   "source": "ots",
+   "title": "LAHORE ELECTRIC SUPPLY COMPANY LIMITED (LESCO), BALOCHISTAN QUOTA",
+   "url": "https://ots.org.pk/project-view.php?pview=534",
+   "notified": false,
+   "eligible": false
+  },
+  "bde17daf6bd18380": {
+   "first_seen": "2026-11-08T19:46:01+00:00",
+   "last_seen": "2026-11-08T19:46:01+00:00",
+   "source": "ots",
+   "title": "Central Power Purchasing Agency (Guarantee) Limited (CPPA-G) HeadHunting",
+   "url": "https://ots.org.pk/project-view.php?pview=532",
+   "notified": false,
+   "eligible": false
+  },
+  "bcd7f941d4c3598f": {
+   "first_seen": "2026-11-08T19:46:01+00:00",
+   "last_seen": "2026-11-08T19:46:01+00:00",
+   "source": "ots",
+   "title": "Pakistan Reinsurance Company Limited (PRCL)",
+   "url": "https://ots.org.pk/project-view.php?pview=531",
+   "notified": false,
+   "eligible": false
+  },
+  "93447dcc015d284d": {
+   "first_seen": "2026-11-08T19:46:03+00:00",
+   "last_seen": "2026-11-08T19:46:03+00:00",
+   "source": "ots",
+   "title": "OTS project 530",
+   "url": "https://ots.org.pk/project-view.php?pview=530",
+   "notified": false,
+   "eligible": false
+  },
+  "a0079c02d2299bf9": {
+   "first_seen": "2026-11-08T19:46:05+00:00",
+   "last_seen": "2026-11-08T19:46:05+00:00",
+   "source": "ots",
+   "title": "Open Testing Service (Pvt) Ltd. (",
+   "url": "https://ots.org.pk/project-view.php?pview=529",
+   "notified": false,
+   "eligible": false
+  },
+  "5ae858c3baa646ab": {
+   "first_seen": "2026-11-08T19:46:05+00:00",
+   "last_seen": "2026-11-08T19:46:05+00:00",
+   "source": "pts",
+   "title": "Sindh Prisons & Corrections Service Department (SPCS-SDP) (572)",
+   "url": "https://www.pts.org.pk/Projects/Details/Vm0wd2VFMUdiRmhUV0d4V1YwZDRWRmx0ZUV0WFJteHpWV3hrVm1KR2NIbFdWM1JMVlVaV1ZVMUVhejA9",
+   "notified": false,
+   "eligible": false
+  },
+  "99a87d476a930d83": {
+   "first_seen": "2026-11-08T19:46:05+00:00",
+   "last_seen": "2026-11-08T19:46:05+00:00",
+   "source": "pts",
+   "title": "Sindh Prisons & Corrections Service Department (SPCS-SDP) (571)",
+   "url": "https://www.pts.org.pk/Projects/Details/Vm0wd2VFMUdiRmhUV0d4V1YwZDRWRmx0ZUV0WFJteHlWbTVrVm1KR2NIbFdWM1JMVlVaV1ZVMUVhejA9",
+   "notified": false,
+   "eligible": false
+  },
+  "f8066ce6d88553a4": {
+   "first_seen": "2026-11-08T19:46:05+00:00",
+   "last_seen": "2026-11-08T19:46:05+00:00",
+   "source": "pts",
+   "title": "State Life Insurance Corporation of Pakistan (SLIC-PAK) (570)",
+   "url": "https://www.pts.org.pk/Projects/Details/Vm0wd2VFMUdiRmhUV0d4V1YwZDRWRmx0ZUV0WFJteFZVVzVrVm1KR2NIbFdWM1JMVlVaV1ZVMUVhejA9",
+   "notified": false,
+   "eligible": false
+  },
+  "ac7926eb09ecd237": {
+   "first_seen": "2026-11-08T19:46:05+00:00",
+   "last_seen": "2026-11-08T19:46:05+00:00",
+   "source": "pts",
+   "title": "Sindh Katchi Abadis Authority Govt. of Sindh (SKAA) (568)",
+   "url": "https://www.pts.org.pk/Projects/Details/Vm0wd2VFMUdiRmhUV0d4V1YwZDRWRmx0ZUV0V01XeFlZM3BHVm1KR2NIbFdWM1JMVlVaV1ZVMUVhejA9",
+   "notified": false,
+   "eligible": false
+  },
+  "15d6bbe50f7de8a2": {
+   "first_seen": "2026-11-08T19:46:05+00:00",
+   "last_seen": "2026-11-08T19:46:05+00:00",
+   "source": "pts",
+   "title": "Sindh Prisons & Corrections Service Police Department (SPCS-SDP) (567)",
+   "url": "https://www.pts.org.pk/Projects/Details/Vm0wd2VFMUdiRmhUV0d4V1YwZG9hRlV3Vm5kVlJscDBaRWhrVm1KR2NIbFdWM1JMVlVaV1ZVMUVhejA9",
+   "notified": false,
+   "eligible": false
+  },
+  "518a5b64d4105c2f": {
+   "first_seen": "2026-11-08T22:57:27+00:00",
+   "last_seen": "2026-11-08T22:57:27+00:00",
+   "source": "bpsc",
+   "title": "Advertisement no 09-2026",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "notified": false,
+   "eligible": false
+  },
+  "3bf7908847c06409": {
+   "first_seen": "2026-11-08T22:57:27+00:00",
+   "last_seen": "2026-11-08T22:57:27+00:00",
+   "source": "bpsc",
+   "title": "Advertisement No. 07/2026",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "notified": false,
+   "eligible": false
+  },
+  "086e3684167b3fc4": {
+   "first_seen": "2026-11-08T22:57:28+00:00",
+   "last_seen": "2026-11-08T22:57:28+00:00",
+   "source": "nts",
+   "title": "Newly Established Hub & Spoke Model at Zahir Pir attached with Sheikh Zayed Medical College / Hospital Rahim Yar Khan Vacant Position (Specialized Healthcare & Medical Education De",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzkx",
+   "notified": false,
+   "eligible": false
+  },
+  "8145bebf94b99335": {
+   "first_seen": "2026-11-08T22:57:29+00:00",
+   "last_seen": "2026-11-08T22:57:29+00:00",
+   "source": "nts",
+   "title": "Cadet College Diamer Screening Test",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzc3",
+   "notified": false,
+   "eligible": false
+  },
+  "f502d0dbce4fd30a": {
+   "first_seen": "2026-11-08T22:57:29+00:00",
+   "last_seen": "2026-11-08T22:57:29+00:00",
+   "source": "nts",
+   "title": "Test of English for International Communication (TOEIC 2026-XI)",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzc4",
+   "notified": false,
+   "eligible": false
+  },
+  "b11ae7dcd1dab7d2": {
+   "first_seen": "2026-11-08T22:57:29+00:00",
+   "last_seen": "2026-11-08T22:57:29+00:00",
+   "source": "nts",
+   "title": "City Institute of Health Sciences , College of Nursing & Midwifery, Karachi (Admissions Test for Generic BS Nursing / Post RN BSN Degree Programs)",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzEw",
+   "notified": false,
+   "eligible": false
+  },
+  "7da3e167d91f856a": {
+   "first_seen": "2026-11-08T22:57:29+00:00",
+   "last_seen": "2026-11-08T22:57:29+00:00",
+   "source": "nts",
+   "title": "Child Protection Welfare Bureau, Punjab October 2026 (Vacancy Announcement)",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzcy",
+   "notified": false,
+   "eligible": false
+  },
+  "94e13ef0ebaf1201": {
+   "first_seen": "2026-11-08T22:57:29+00:00",
+   "last_seen": "2026-11-08T22:57:29+00:00",
+   "source": "nts",
+   "title": "Gujranwala Electric Power Company (GEPCO) Career Opportunities",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzcz",
+   "notified": false,
+   "eligible": false
+  },
+  "2e3e84a162c30fe3": {
+   "first_seen": "2026-11-08T22:57:29+00:00",
+   "last_seen": "2026-11-08T22:57:29+00:00",
+   "source": "nts",
+   "title": "Govt. Of The Punjab Specialized Healthcare & Medical Education Department Vacancy Announcement (College-Of-Ophthalmology-&-Allied-Vision-Sciences-Lahore-KEMU/MAYO Hospital Lahore)",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzc0",
+   "notified": false,
+   "eligible": false
+  },
+  "6e27ff17295e539f": {
+   "first_seen": "2026-11-08T22:57:29+00:00",
+   "last_seen": "2026-11-08T22:57:29+00:00",
+   "source": "nts",
+   "title": "SPL-Security Papers Limited- Non-Management Positions",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzcx",
+   "notified": false,
+   "eligible": false
+  },
+  "a18985767f10f6f6": {
+   "first_seen": "2026-11-08T22:57:29+00:00",
+   "last_seen": "2026-11-08T22:57:29+00:00",
+   "source": "nts",
+   "title": "Punjab Walled Cities and Heritage Areas Authority",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzM0",
+   "notified": false,
+   "eligible": false
+  },
+  "80b25e27e568e70d": {
+   "first_seen": "2026-11-08T22:57:29+00:00",
+   "last_seen": "2026-11-08T22:57:29+00:00",
+   "source": "nts",
+   "title": "City Institute of Health Sciences , College of Nursing & Midwifery, Karachi (Admissions Test for Various Diploma Programs)",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzEx",
+   "notified": false,
+   "eligible": false
+  },
+  "661ad49a003fff86": {
+   "first_seen": "2026-11-08T22:57:30+00:00",
+   "last_seen": "2026-11-08T22:57:30+00:00",
+   "source": "ots",
+   "title": "OTS project 527",
+   "url": "https://ots.org.pk/project-view.php?pview=527",
+   "notified": false,
+   "eligible": false
+  },
+  "d521eb036a8f56d7": {
+   "first_seen": "2026-11-08T22:57:30+00:00",
+   "last_seen": "2026-11-08T22:57:30+00:00",
+   "source": "ots",
+   "title": "Neelum Jhelum Hydropower Company (Pvt) Ltd",
+   "url": "https://ots.org.pk/project-view.php?pview=528",
+   "notified": false,
+   "eligible": false
+  },
+  "ca22a970d0732c07": {
+   "first_seen": "2026-11-08T22:57:30+00:00",
+   "last_seen": "2026-11-08T22:57:30+00:00",
+   "source": "ots",
+   "title": "Central Power Purchasing Agency (Guarantee) Limited (CPPA-G) HeadHunting",
+   "url": "https://ots.org.pk/project-view.php?pview=526",
+   "notified": false,
+   "eligible": false
+  },
+  "e5f35e519eab4f9d": {
+   "first_seen": "2026-11-08T22:57:30+00:00",
+   "last_seen": "2026-11-08T22:57:30+00:00",
+   "source": "ots",
+   "title": "Public Sector Entity, Government of Sindh",
+   "url": "https://ots.org.pk/project-view.php?pview=525",
+   "notified": false,
+   "eligible": false
+  },
+  "d87be87ed207dce8": {
+   "first_seen": "2026-11-08T22:57:30+00:00",
+   "last_seen": "2026-11-08T22:57:30+00:00",
+   "source": "ots",
+   "title": "National Insurance Company Limited (NICL) - (Headhunting)",
+   "url": "https://ots.org.pk/project-view.php?pview=524",
+   "notified": false,
+   "eligible": false
+  },
+  "368d6201de9dbfb8": {
+   "first_seen": "2026-11-08T22:57:30+00:00",
+   "last_seen": "2026-11-08T22:57:30+00:00",
+   "source": "ots",
+   "title": "National Insurance Company Limited (NICL) - Management Trainee Officer (MTO)",
+   "url": "https://ots.org.pk/project-view.php?pview=523",
+   "notified": false,
+   "eligible": false
+  },
+  "58efbb5a2b740687": {
+   "first_seen": "2026-11-08T22:57:30+00:00",
+   "last_seen": "2026-11-08T22:57:30+00:00",
+   "source": "ots",
+   "title": "Ministry of Religious Affairs and Interfaith Harmony, Government of Pakistan (Hiring of Services for Hajj Medical Mission for Hajj - 2027) Applications are invited for the hiring o",
+   "url": "https://ots.org.pk/project-view.php?pview=522",
+   "notified": false,
+   "eligible": false
+  },
+  "d69ef288d2acf86f": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "njp",
+   "title": "Sanitary Worker (Sweeper)",
+   "url": "https://njp.gov.pk/jobs/10624",
+   "scale": "BPS-01",
+   "eligible": false,
+   "notified": false,
+   "method": "prefilter"
+  },
+  "f774cc545e093958": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "njp",
+   "title": "Labourer",
+   "url": "https://njp.gov.pk/jobs/10623",
+   "scale": "BPS-01",
+   "eligible": false,
+   "notified": false,
+   "method": "prefilter"
+  },
+  "21ae51446d761340": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "njp",
+   "title": "Polisher",
+   "url": "https://njp.gov.pk/jobs/10622",
+   "scale": "BPS-04",
+   "eligible": false,
+   "notified": false,
+   "method": "prefilter"
+  },
+  "348172af3c62a99b": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "njp",
+   "title": "Pipe Fitter / Plumber",
+   "url": "https://njp.gov.pk/jobs/10621",
+   "scale": "BPS-04",
+   "eligible": false,
+   "notified": false,
+   "method": "prefilter"
+  },
+  "0314cd18a55cca4f": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "njp",
+   "title": "Painter",
+   "url": "https://njp.gov.pk/jobs/10620",
+   "scale": "BPS-04",
+   "eligible": false,
+   "notified": false,
+   "method": "prefilter"
+  },
+  "8dc0641682115058": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "njp",
+   "title": "Motor Pump Attendant",
+   "url": "https://njp.gov.pk/jobs/10619",
+   "scale": "BPS-04",
+   "eligible": false,
+   "notified": false,
+   "method": "prefilter"
+  },
+  "8e8f258a35086619": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "sbp",
+   "title": "Information Technology Operations Department (On Contract)",
+   "url": "https://www.sbp.org.pk/careers/information-technology-operations-department-on-contract",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
+  },
+  "8cae1bfafcf17f20": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "sbp",
+   "title": "Cyber Security Department",
+   "url": "https://www.sbp.org.pk/careers/cyber-security-department-2026",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
+  },
+  "0e24697af1379c75": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "sbp",
+   "title": "Economic Analysts Training Scheme (EATS) - 7th Batch",
+   "url": "https://www.sbp.org.pk/careers/economic-analysts-training-scheme-eats-7th-batch",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
+  },
+  "dbde1d221ed72f11": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "sbp",
+   "title": "State Bank Officers Training Scheme (SBOTS) - 29th Batch",
+   "url": "https://www.sbp.org.pk/careers/state-bank-officers-training-scheme-sbots-29th-batch",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
+  },
+  "40146bef498798bf": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "sbp",
+   "title": "Raast Payments Pakistan (Private) Limited",
+   "url": "https://www.sbp.org.pk/careers/raast-payments-pakistan-private-limited-2026",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
+  },
+  "89d6be0cc56afb24": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "blnjobs",
+   "title": "NationalGrid Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/nationalgrid-balochistan-quota-jobs-2026/",
+   "deadline": "2026-11-23",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
+  },
+  "c4cca8c59e51b566": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "blnjobs",
+   "title": "Military Engineering Services Balochista Quota jobs 2026",
+   "url": "https://blnjobs.com/military-engineering-services-balochista-quota-jobs-2026/",
+   "deadline": "2026-11-14",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
+  },
+  "77b36471667b09bb": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "blnjobs",
+   "title": "Prime Ministers Office Islamabad JObs 2026",
+   "url": "https://blnjobs.com/prime-ministers-office-islamabad-jobs-2026/",
+   "deadline": "2026-11-22",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
+  },
+  "7bca0178186171cd": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "blnjobs",
+   "title": "Multan Electric Power Company MEPCO Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/multan-electric-power-company-mepco-balochistan-quota-jobs-2026/",
+   "deadline": "2026-11-30",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
+  },
+  "7ea2b953ab8f3c43": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "blnjobs",
+   "title": "Faisalabad Electric Supply Company FESCO Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/faisalabad-electric-supply-company-fesco-balochistan-quota-jobs-2026/",
+   "deadline": "2026-11-25",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
+  },
+  "5624241b77d8fcbf": {
+   "first_seen": "2026-11-09T20:39:15+00:00",
+   "last_seen": "2026-11-09T20:39:15+00:00",
+   "source": "blnjobs",
+   "title": "District and Session Court Loralai Jobs 2026",
+   "url": "https://blnjobs.com/district-and-session-court-loralai-jobs-2026/",
+   "deadline": "2026-11-24",
+   "eligible": false,
+   "notified": false,
+   "method": "heuristic"
+  }
+ },
+ "posts": {},
+ "fingerprints": {
+  "919b7884960ef3c6": {
+   "source": "njp",
+   "title": "Sanitary Worker (Sweeper)"
+  },
+  "d19b7984960ef106": {
+   "source": "njp",
+   "title": "Labourer"
+  },
+  "d50a3c845206fd82": {
+   "source": "njp",
+   "title": "Polisher"
+  },
+  "518b7c049226d506": {
+   "source": "njp",
+   "title": "Pipe Fitter / Plumber"
+  },
+  "51bb1c849226f58e": {
+   "source": "njp",
+   "title": "Painter"
+  },
+  "d5977984d63e75a2": {
+   "source": "njp",
+   "title": "Motor Pump Attendant"
+  },
+  "0de40244abd1318f": {
+   "source": "sbp",
+   "title": "Information Technology Operations Department (On contract)"
+  },
+  "def6ae35ac8855e4": {
+   "source": "blnjobs",
+   "title": "NationalGrid Balochistan Quota Jobs 2026"
+  },
+  "96b6af352808513e": {
+   "source": "blnjobs",
+   "title": "Military Engineering Services Balochista Quota jobs 2026"
+  },
+  "96f227552c289172": {
+   "source": "blnjobs",
+   "title": "Prime Ministers Office Islamabad JObs 2026"
+  },
+  "1bf6a655ace81134": {
+   "source": "blnjobs",
+   "title": "Multan Electric Power Company MEPCO Balochistan Quota Jobs 2026"
+  },
+  "82beae15aa485126": {
+   "source": "blnjobs",
+   "title": "Faisalabad Electric Supply Company FESCO Balochistan Quota Jobs 2026"
+  },
+  "16faae35ac08d126": {
+   "source": "blnjobs",
+   "title": "District and Session Court Loralai Jobs 2026"
+  }
+ }
+}
