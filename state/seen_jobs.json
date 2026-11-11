@@ -50,6 +50,46 @@
    "eligible": true,
    "notified": false,
    "method": "llm"
+  },
+  "3e91f9fac684a78f": {
+   "first_seen": "2026-11-11T20:59:57+00:00",
+   "last_seen": "2026-11-11T20:59:57+00:00",
+   "source": "nts",
+   "title": "Faisalabad Electric Supply Company Limited (FESCO) Career Opportunities",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzk5",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "d66e6da505823a0a": {
+   "first_seen": "2026-11-11T21:00:03+00:00",
+   "last_seen": "2026-11-11T21:00:03+00:00",
+   "source": "nts",
+   "title": "Gujranwala Electric Power Company (GEPCO) Career Opportunities (Balochistan Quota)",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxNDAx",
+   "eligible": true,
+   "notified": false,
+   "method": "llm"
+  },
+  "15143fc78c808837": {
+   "first_seen": "2026-11-11T21:00:06+00:00",
+   "last_seen": "2026-11-11T21:00:06+00:00",
+   "source": "nts",
+   "title": "Graduate Assessment Test-GAT-General-VIII - 2026",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzc2",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "5efa7c3642a4a9a2": {
+   "first_seen": "2026-11-11T21:00:09+00:00",
+   "last_seen": "2026-11-11T21:00:09+00:00",
+   "source": "nts",
+   "title": "Shaheed Zulfikar Ali Bhutto Institute of Science and Technology SZABIST(Special Test for MS Programs-I))",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxMzk2",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -57,6 +97,16 @@
    "source": "fpsc",
    "title": "Assistant Audit Officer",
    "first_seen": "2026-11-11T20:15:42+00:00"
+  },
+  "3450c7f091832e9d": {
+   "source": "nts",
+   "title": "Assistant Manager (CS) / Revenue Officer (RO)",
+   "first_seen": "2026-11-11T21:00:09+00:00"
+  },
+  "605ce680543893b3": {
+   "source": "nts",
+   "title": "Assistant Manager (CS) / Revenue Officer (RO)",
+   "first_seen": "2026-11-11T21:00:09+00:00"
   }
  },
  "fingerprints": {
@@ -127,6 +177,22 @@
   "28b5a4c503316a50": {
    "source": "fpsc",
    "title": "GR – Consolidated Advertisement No. 4/2026 (pages 10-12)"
+  },
+  "08ae2cb5fa8ee522": {
+   "source": "nts",
+   "title": "Faisalabad Electric Supply Company Limited (FESCO) Career Opportunities"
+  },
+  "18f6fa890895d4a9": {
+   "source": "nts",
+   "title": "Gujranwala Electric Power Company (GEPCO) Career Opportunities (Balochistan Quota)"
+  },
+  "c0fd9e124938662f": {
+   "source": "nts",
+   "title": "Graduate Assessment Test-GAT-General-VIII - 2026"
+  },
+  "50fdde0a6938662f": {
+   "source": "nts",
+   "title": "Shaheed Zulfikar Ali Bhutto Institute of Science and Technology SZABIST(Special Test for MS Programs-I))"
   }
  }
 }
