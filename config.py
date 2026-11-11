@@ -77,10 +77,11 @@ PROVIDER_PRESETS: dict[str, dict[str, str]] = {
         # (gemini-2.5-flash now answers 404 "no longer available to new users").
         # If this default ever fails, run `python main.py --check-llm`: it lists
         # every model YOUR key can call, and you pin one via LLM_MODEL in .env.
-        # `gemini-flash-latest` is a rolling alias that tracks the current Flash
-        # model automatically, if you prefer not to revisit this.
-        "model": "gemini-3.8-flash",
-        "vision_model": "gemini-3.8-flash",
+        # Verified against a real AI Studio key: gemini-3-flash-preview answers 200,
+        # while gemini-2.5-flash/-lite/-pro answer 404 ("no longer available to new
+        # users") and gemini-3.8-flash exhausts its free daily quota quickly.
+        "model": "gemini-3-flash-preview",
+        "vision_model": "gemini-3-flash-preview",
         "key_env": "GEMINI_API_KEY",
     },
 }
@@ -119,6 +120,14 @@ class Settings:
     # Should regex-heuristic verdicts (used when the LLM is unavailable) be pushed
     # to Discord? Off by default: a heuristic "maybe" is not worth a false alarm.
     notify_on_heuristic: bool = field(default_factory=lambda: _env_bool("NOTIFY_ON_HEURISTIC", False))
+    # When the verifier is unreachable (quota/auth/outage) the run degrades to the
+    # offline heuristic and matches can no longer be verified. Staying silent then is
+    # the worst outcome — the user cannot tell "no jobs" from "tool is blind" — so a
+    # single clearly-labelled degradation notice is sent instead.
+    notify_on_degraded: bool = field(default_factory=lambda: _env_bool("NOTIFY_ON_DEGRADED", True))
+    # Free-tier quotas are per model, so an exhausted model can be side-stepped by
+    # falling through this list (comma separated, tried in order).
+    llm_fallback_models: str = field(default_factory=lambda: _env("LLM_FALLBACK_MODELS", ""))
     max_job_age_days: int = field(default_factory=lambda: _env_int("MAX_JOB_AGE_DAYS", 30))
     rescan_after_days: int = field(default_factory=lambda: _env_int("RESCAN_AFTER_DAYS", 0))
 

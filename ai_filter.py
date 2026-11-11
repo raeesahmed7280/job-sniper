@@ -272,6 +272,69 @@ def heuristic(text: str, title: str = "") -> EligibilityResult:
 # =====================================================================
 #  Layer 2 — the LLM
 # =====================================================================
+# --- model state -------------------------------------------------------
+# Free-tier quotas are counted PER MODEL, so when one model reports its quota
+# is exhausted the run switches to the next candidate instead of degrading every
+# remaining advertisement to the heuristic. `_LLM_DOWN` is set once no candidate
+# is left, which lets the rest of the run skip the network entirely.
+_model_candidates: list[str] = []
+_model_index = 0
+_LLM_DOWN = ""
+
+
+def _candidates() -> list[str]:
+    """Primary model first, then LLM_FALLBACK_MODELS, de-duplicated."""
+    global _model_candidates
+    if not _model_candidates:
+        names = [settings.resolved_model] + [
+            part.strip() for part in (settings.llm_fallback_models or "").split(",") if part.strip()
+        ]
+        ordered: list[str] = []
+        for name in names:
+            if name and name not in ordered:
+                ordered.append(name)
+        _model_candidates = ordered
+    return _model_candidates
+
+
+def active_model() -> str:
+    candidates = _candidates()
+    if not candidates:
+        return settings.resolved_model
+    return candidates[min(_model_index, len(candidates) - 1)]
+
+
+def llm_down_reason() -> str:
+    """Non-empty when every candidate model proved unusable during this process."""
+    return _LLM_DOWN
+
+
+def _quota_exhausted(detail: str) -> bool:
+    """A daily/free-tier quota refusal — retrying immediately cannot help."""
+    return bool(re.search(
+        r"exceeded your current quota|quota exceeded|resource_?exhausted|per day|daily limit",
+        detail or "", re.I))
+
+
+def _model_retired(detail: str) -> bool:
+    return bool(re.search(r"no longer available|not found|does not exist|unsupported model",
+                          detail or "", re.I))
+
+
+def _rotate_model(why: str) -> bool:
+    """Move to the next candidate model; False when the list is exhausted."""
+    global _model_index, _LLM_DOWN
+    previous = active_model()
+    if _model_index + 1 < len(_candidates()):
+        _model_index += 1
+        log.warning("LLM model %s unusable (%s) — switching to %s", previous, why, active_model())
+        return True
+    _LLM_DOWN = why
+    log.error("LLM unavailable for the rest of this run: %s (%s). Remaining "
+              "advertisements fall back to the offline heuristic.", why, previous)
+    return False
+
+
 def _call_llm(messages: list[dict[str, Any]], temperature: float = 0.0,
               max_tokens: int = 8000) -> Optional[str]:
     """
@@ -284,8 +347,11 @@ def _call_llm(messages: list[dict[str, Any]], temperature: float = 0.0,
     """
     if not settings.llm_enabled:
         return None
+    # Already proven unusable this run: do not spend a retry cycle per advertisement.
+    if _LLM_DOWN:
+        return None
     body = {
-        "model": settings.resolved_model,
+        "model": active_model(),
         "messages": messages,
         "temperature": temperature,
         "max_tokens": max_tokens,
@@ -325,6 +391,16 @@ def _call_llm(messages: list[dict[str, Any]], temperature: float = 0.0,
                 log.info("Provider rejected response_format — retrying without it")
                 body.pop("response_format", None)
                 continue
+            # A free-tier quota is counted per model, so refusing this one does not
+            # mean the key is bad: try the next candidate before degrading to regex.
+            if exc.code == 429 and _quota_exhausted(detail):
+                if _rotate_model("quota exhausted"):
+                    continue
+                return None
+            if exc.code == 404 and _model_retired(detail):
+                if _rotate_model("model retired for this key"):
+                    continue
+                return None
             if exc.code in (401, 403):
                 log.error("Authentication/permission failure — check the key in %s "
                           "and that the API is enabled for that project", settings.llm_key_source)
@@ -549,7 +625,9 @@ def evaluate(posting: JobPosting, use_llm: bool = True) -> EligibilityResult:
     raw = _call_llm(messages)
     if raw is None:
         fallback = heuristic(text, posting.title)
-        fallback.reason = f"LLM unavailable — {fallback.reason}"
+        cause = llm_down_reason()
+        fallback.reason = (f"LLM unavailable ({cause}) — {fallback.reason}" if cause
+                           else f"LLM unavailable — {fallback.reason}")
         fallback.source, fallback.apply_url = posting.source, posting.url
         return fallback
 

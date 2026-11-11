@@ -10,33 +10,53 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "42c52d1c2a7e5610": {
+   "first_seen": "2026-11-11T20:14:52+00:00",
+   "last_seen": "2026-11-11T20:14:52+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 1-3)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "d3a4206a8f6e6d3d": {
+   "first_seen": "2026-11-11T20:15:26+00:00",
+   "last_seen": "2026-11-11T20:15:26+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 4-6)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "9aaebc6ff744bcd6": {
+   "first_seen": "2026-11-11T20:15:33+00:00",
+   "last_seen": "2026-11-11T20:15:33+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 7-9)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "ee9001264e6c5027": {
+   "first_seen": "2026-11-11T20:15:42+00:00",
+   "last_seen": "2026-11-11T20:15:42+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 10-12)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "eligible": true,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
-  "d005280ad3d93e73": {
+  "95401f5892e37590": {
    "source": "fpsc",
-   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 1-3)",
-   "first_seen": "2026-11-11T18:32:16+00:00"
-  },
-  "9a4161b18a83867b": {
-   "source": "fpsc",
-   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 4-6)",
-   "first_seen": "2026-11-11T18:32:16+00:00"
-  },
-  "35073423171dfe6a": {
-   "source": "fpsc",
-   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 7-9)",
-   "first_seen": "2026-11-11T18:32:16+00:00"
-  },
-  "24663feafb3240dd": {
-   "source": "fpsc",
-   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 10-12)",
-   "first_seen": "2026-11-11T18:32:16+00:00"
-  },
-  "35f5b62039c58ff0": {
-   "source": "nts",
-   "title": "Gujranwala Electric Power Company (GEPCO) Career Opportunities (Balochistan Quota)",
-   "first_seen": "2026-11-11T18:32:16+00:00"
+   "title": "Assistant Audit Officer",
+   "first_seen": "2026-11-11T20:15:42+00:00"
   }
  },
  "fingerprints": {
@@ -92,11 +112,11 @@
    "source": "blnjobs",
    "title": "District and Session Court Loralai Jobs 2026"
   },
-  "0c1d3e5d1164b81d": {
+  "1e1d3cdc1d64b81d": {
    "source": "fpsc",
    "title": "GR – Consolidated Advertisement No. 4/2026 (pages 1-3)"
   },
-  "6c80880aa2305f41": {
+  "6880880aa2305f41": {
    "source": "fpsc",
    "title": "GR – Consolidated Advertisement No. 4/2026 (pages 4-6)"
   },
@@ -107,22 +127,6 @@
   "28b5a4c503316a50": {
    "source": "fpsc",
    "title": "GR – Consolidated Advertisement No. 4/2026 (pages 10-12)"
-  },
-  "08ae2cb5fa8ee522": {
-   "source": "nts",
-   "title": "Faisalabad Electric Supply Company Limited (FESCO) Career Opportunities"
-  },
-  "18f6fa890895d4a9": {
-   "source": "nts",
-   "title": "Gujranwala Electric Power Company (GEPCO) Career Opportunities (Balochistan Quota)"
-  },
-  "c0fd9e124938662f": {
-   "source": "nts",
-   "title": "Graduate Assessment Test-GAT-General-VIII - 2026"
-  },
-  "50fdde0a6938662f": {
-   "source": "nts",
-   "title": "Shaheed Zulfikar Ali Bhutto Institute of Science and Technology SZABIST(Special Test for MS Programs-I))"
   }
  }
 }

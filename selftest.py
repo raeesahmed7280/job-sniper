@@ -253,6 +253,76 @@ def test_email() -> None:
         check("email disabled cleanly without credentials", True, "no SMTP configured")
 
 
+# --------------------------------------------- 7. verifier resilience
+def test_verifier_resilience() -> None:
+    """
+    The failure that made this matter: the verifier answered 429 (free-tier quota),
+    every verdict silently became an offline guess, the notify gate refused unverified
+    guesses, and the user got nothing — with no way to tell that from "no jobs today".
+    """
+    import ai_filter
+    import main as main_mod
+    import notifier
+    from models import EligibilityResult
+
+    # quota vs ordinary rate-limit must be distinguished
+    check("429 quota text detected",
+          ai_filter._quota_exhausted("You exceeded your current quota, please check your plan"))
+    check("resource_exhausted detected",
+          ai_filter._quota_exhausted('{"status": "RESOURCE_EXHAUSTED"}'))
+    check("plain rate limit is not a quota refusal",
+          not ai_filter._quota_exhausted("Too many requests per minute, slow down"))
+    check("retired-model text detected",
+          ai_filter._model_retired("This model is no longer available to new users"))
+
+    # model rotation walks the candidate list then declares the verifier down
+    saved_candidates, saved_index, saved_down = (
+        ai_filter._model_candidates, ai_filter._model_index, ai_filter._LLM_DOWN)
+    try:
+        ai_filter._model_candidates = ["primary-model", "backup-model"]
+        ai_filter._model_index = 0
+        ai_filter._LLM_DOWN = ""
+        check("rotation moves to the backup model", ai_filter._rotate_model("quota exhausted")
+              and ai_filter.active_model() == "backup-model")
+        check("rotation stops when the list is spent",
+              not ai_filter._rotate_model("quota exhausted")
+              and ai_filter.llm_down_reason() == "quota exhausted")
+    finally:
+        ai_filter._model_candidates, ai_filter._model_index, ai_filter._LLM_DOWN = (
+            saved_candidates, saved_index, saved_down)
+
+    # an unverified "maybe" must be held back, and must never be recorded as seen
+    guess_yes = EligibilityResult(eligible=True, title="Assistant Director", method="heuristic",
+                                 reason="regex matched")
+    verified = EligibilityResult(eligible=True, title="Assistant Director", method="llm",
+                                 reason="LLM verified")
+    check("heuristic maybes are held back", main_mod._is_held_back(guess_yes))
+    check("LLM-verified matches are not", not main_mod._is_held_back(verified))
+    check("heuristic rejects are not 'held back' (they are simply not recorded)",
+          not main_mod._is_held_back(EligibilityResult(eligible=False, title="Warder",
+                                                      method="heuristic", reason="BPS-05")))
+
+    # the degradation notice: built even when nothing looked like a match, and inert
+    # when there is nothing to report
+    sent = notifier.send_degraded([], "verifier unavailable", unrecorded=0,
+                                  webhook_url="http://127.0.0.1:9/none")
+    check("degradation notice is a no-op with nothing to report", sent == 0)
+    captured: list[dict] = []
+    original_post = notifier._post
+    try:
+        notifier._post = lambda payload, url, max_retries=3: (captured.append(payload), True)[1]
+        sent = notifier.send_degraded([guess_yes], "quota exhausted",
+                                      unrecorded=3, webhook_url="http://127.0.0.1:9/none")
+        embed = captured[0]["embeds"][0]
+        check("degradation notice reaches Discord", sent >= 1 and embed["color"] == 0xE67E22)
+        check("degradation notice counts everything unchecked",
+              "(4 unchecked)" in embed["title"], embed["title"])
+        check("degradation notice says nothing was marked seen",
+              "marked as seen" in embed["footer"]["text"])
+    finally:
+        notifier._post = original_post
+
+
 # ------------------------------------------------------------------ x. live
 def test_live() -> None:
     import ai_filter, vision
@@ -297,6 +367,7 @@ def main() -> int:
     test_json_parsing()
     test_notifier()
     test_email()
+    test_verifier_resilience()
     if "--live" in sys.argv:
         print("\n--- live checks ---")
         test_live()

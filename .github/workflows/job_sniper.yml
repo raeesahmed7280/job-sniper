@@ -48,7 +48,9 @@ jobs:
       EMAIL_TO: ${{ secrets.EMAIL_TO || secrets.SMTP_USER }}
       # --- optional tuning, overridable per-repo via Variables (not secrets) ---
       LLM_PROVIDER: ${{ vars.LLM_PROVIDER || 'gemini' }}
-      LLM_MODEL: ${{ vars.LLM_MODEL || 'gemini-3.8-flash' }}
+      LLM_MODEL: ${{ vars.LLM_MODEL || 'gemini-3-flash-preview' }}
+      LLM_FALLBACK_MODELS: ${{ vars.LLM_FALLBACK_MODELS || '' }}
+      NOTIFY_ON_DEGRADED: ${{ vars.NOTIFY_ON_DEGRADED || 'true' }}
       MAX_LLM_CALLS_PER_RUN: ${{ vars.MAX_LLM_CALLS_PER_RUN || '60' }}
       MAX_PDF_PAGES: ${{ vars.MAX_PDF_PAGES || '30' }}   # full 24-page FPSC consolidated ads
       # the report/log files are uploaded as artefacts instead of committed

@@ -50,6 +50,20 @@ DOCUMENT_METHODS = {"pdf-text", "pdf-text-partial", "ocr", "llm-vision", "chunke
 
 
 # --------------------------------------------------------------------- logging
+def _is_held_back(result: EligibilityResult) -> bool:
+    """
+    True for a heuristic-only "maybe" that the notify gate will refuse to push.
+
+    Such a verdict is unverified (the verifier was unreachable or its budget was
+    spent), so the advertisement must NOT be written to the seen-state: doing that
+    silently buries a real match forever, because the next run would treat it as an
+    already-handled duplicate instead of re-checking it once the verifier works.
+    """
+    return (bool(result.eligible)
+            and not str(result.method).startswith("llm")
+            and not settings.notify_on_heuristic)
+
+
 def setup_logging(verbose: bool = False) -> None:
     settings.log_dir.mkdir(parents=True, exist_ok=True)
     log_file = settings.log_dir / f"job-sniper-{datetime.now():%Y%m%d}.log"
@@ -328,6 +342,8 @@ def run_once(args) -> dict:
 
     # 4) evaluate ----------------------------------------------------------
     results: list[EligibilityResult] = []
+    unverified: list[EligibilityResult] = []      # heuristic maybes, deliberately not pushed
+    unrecorded: list[EligibilityResult] = []      # stand-in verdicts, deliberately not persisted
     if args.no_llm:
         log.info("--no-llm: using the offline heuristic filter")
     for posting in fresh:
@@ -337,6 +353,18 @@ def run_once(args) -> dict:
         result.ad_url = posting.attachments[0] if posting.attachments else ""
         result.page_range = posting.page_range
         results.append(result)
+        if _is_held_back(result):
+            # an unverified "maybe": never pushed, and never recorded as handled
+            unverified.append(result)
+            continue
+        if (not str(result.method).startswith("llm") and settings.llm_enabled
+                and not args.no_llm):
+            # The verifier was supposed to decide this advertisement but could not
+            # (quota/auth/outage), so the verdict is a stand-in guess. Recording it
+            # would let a transient outage bury a real match permanently — an ad the
+            # regex rejected today would never be looked at again. Leave it unseen.
+            unrecorded.append(result)
+            continue
         store.remember(posting, eligible=bool(result.eligible), notified=False,
                        extra={"method": result.method})
 
@@ -360,7 +388,7 @@ def run_once(args) -> dict:
             result.reason = (f"Already alerted from {owner.get('source')} "
                              f"({str(owner.get('first_seen'))[:10]}) — {result.reason}")
             suppressed += 1
-        elif result.eligible:
+        elif result.eligible and not _is_held_back(result):
             added = store.register_posts(aliases, posting.source, result.title or posting.title)
             if added:
                 log.debug("registered %d new vacancy alias(es) for %s", added, posting.title[:50])
@@ -386,10 +414,22 @@ def run_once(args) -> dict:
 
     delivered = 0
     emailed = 0
+    degraded = 0
     if heuristic_matches and not settings.notify_on_heuristic:
-        log.warning("%d heuristic match(es) held back (NOTIFY_ON_HEURISTIC=false): %s",
+        log.warning("%d unverified candidate(s) held back (NOTIFY_ON_HEURISTIC=false): %s",
                     len(heuristic_matches),
                     "; ".join(r.title[:40] for r in heuristic_matches[:3]))
+    # Never stay silent when the verifier is down: the user cannot tell "no jobs today"
+    # from "the tool is blind". One clearly-labelled notice fixes that.
+    verifier_down = ai_filter.llm_down_reason()
+    if verifier_down and (heuristic_matches or unrecorded):
+        log.warning("verifier was unavailable this run: %s — %d candidate(s) unchecked, "
+                    "%d verdict(s) not recorded", verifier_down, len(heuristic_matches),
+                    len(unrecorded))
+        if settings.notify_on_degraded and not args.no_notify:
+            degraded = notifier.send_degraded(heuristic_matches, verifier_down,
+                                             unrecorded=len(unrecorded))
+            log.info("degradation notice sent to %d channel(s)", degraded)
     if to_push and not args.no_notify:
         header = (f"**Job Sniper** — {len(to_push)} new match(es) for the "
                   f"Balochistan / Commerce profile")
@@ -408,11 +448,18 @@ def run_once(args) -> dict:
     print("\n" + notifier.summarize(results))
     print(f"\nRun finished in {time.time() - started:.1f}s | "
           f"scraped={len(postings)} duplicates={duplicate_count} new={len(fresh)} "
-          f"eligible={len(eligible)} discord={delivered} emailed={emailed} "
-          f"llm_calls={ai_filter.llm_calls_made()}/{settings.max_llm_calls or '∞'}")
+          f"eligible={len(eligible)} unverified={len(unverified)} "
+          f"unrecorded={len(unrecorded)} "
+          f"discord={delivered} emailed={emailed} degraded={degraded} "
+          f"llm_calls={ai_filter.llm_calls_made()}/{settings.max_llm_calls or '∞'} "
+          f"model={ai_filter.active_model()}")
+    if ai_filter.llm_down_reason():
+        print(f"⚠ verifier unavailable this run: {ai_filter.llm_down_reason()} — "
+              f"{len(unverified)} candidate(s) left in the unverified pool for the next run")
     print(f"State: {store.summary()}")
     print(f"Report: {report_path}")
-    return {"scraped": len(postings), "fresh": len(fresh), "results": results, "notified": delivered}
+    return {"scraped": len(postings), "fresh": len(fresh), "results": results,
+            "notified": delivered, "unverified": len(unverified), "degraded": degraded}
 
 
 def _write_report(started: float, sources: list[str], results: list[EligibilityResult],

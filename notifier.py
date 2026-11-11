@@ -302,6 +302,62 @@ def send_email(results: list[EligibilityResult], only_eligible: bool = True,
     return len(selected) if _smtp_send(subject, text_body, html_body) else 0
 
 
+def send_degraded(unverified: list[EligibilityResult], cause: str, unrecorded: int = 0,
+                  webhook_url: Optional[str] = None) -> int:
+    """
+    Tell the user the verifier was unreachable and N advertisement(s) went unchecked.
+
+    Silence is the one failure mode a monitoring tool must not have: without this the
+    inbox looks identical whether there were no matching jobs or the pipeline was
+    blind all day. Returns how many channels accepted the notice (0 = none set up).
+    """
+    total = len(unverified) + unrecorded
+    if not total:
+        return 0
+    sent = 0
+    listing = "\n".join(
+        f"• {r.title or 'Untitled'}" + (f" — {r.scale_label}" if r.scale else "")
+        + (f" (deadline {r.deadline})" if r.deadline else "")
+        for r in unverified[:12]) or "(none looked like a match on keywords alone)"
+    footer = ("Nothing from this run was marked as seen — every advertisement above is "
+              "re-checked automatically once the verifier is back.")
+
+    embed = {
+        "title": f"⚠️ Job Sniper — AI verifier unavailable ({total} unchecked)",
+        "description": (f"**{cause}**\n\n{len(unverified)} advertisement(s) looked like possible "
+                        f"matches on keywords alone but could not be verified against your "
+                        f"profile, so they were NOT alerted as matches:\n\n{listing}"),
+        "color": 0xE67E22,
+        "footer": {"text": footer[:2040]},
+    }
+    url = webhook_url or settings.discord_webhook_url
+    if url and _post({"embeds": [embed]}, url):
+        sent += 1
+
+    if settings.email_enabled:
+        subject = f"Job Sniper: verifier unavailable — {total} unverified candidate(s)"
+        text_body = (f"The AI verifier could not be reached this run: {cause}\n\n"
+                     f"{len(unverified)} advertisement(s) looked like possible matches on keywords "
+                     f"but could not be checked against your profile:\n\n{listing}\n\n{footer}")
+        rows = "".join(
+            f"<li><strong>{html_escape(r.title or 'Untitled')}</strong>"
+            f"{(' — ' + html_escape(r.scale_label)) if r.scale else ''}"
+            f"{(' · deadline ' + html_escape(str(r.deadline))) if r.deadline else ''}"
+            f"<br><small>{html_escape(r.reason)}</small></li>"
+            for r in unverified[:12])
+        html_body = (f"<html><body style=\"font:14px system-ui\">"
+                     f"<h2 style=\"color:#b45309\">⚠️ AI verifier unavailable</h2>"
+                     f"<p><strong>{html_escape(cause)}</strong></p>"
+                     f"<p>{len(unverified)} advertisement(s) looked like possible matches on "
+                     f"keywords but could not be verified against your profile:</p>"
+                     f"<ul>{rows or '<li>(none looked like a match on keywords alone)</li>'}</ul>"
+                     f"<p style=\"color:#6b7280\">{html_escape(footer)}</p>"
+                     f"</body></html>")
+        if _smtp_send(subject, text_body, html_body):
+            sent += 1
+    return sent
+
+
 def send_test_email() -> bool:
     """`python main.py --test-email` — proves the SMTP credentials work."""
     if not settings.email_enabled:
