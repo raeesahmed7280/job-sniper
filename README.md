@@ -11,6 +11,32 @@ It does **not** apply for jobs, log in anywhere, or fill any form. Read-only dis
 
 ---
 
+## Read this first: "I got no alert today"
+
+Silence has four causes, and three of them used to look exactly like "no jobs today". The pipeline
+now distinguishes them, but you should know where to look:
+
+| Symptom | What it means | Where to look |
+|---|---|---|
+| Nothing at all, for days | the scheduled run is not happening | `python tools/healthcheck.py --dry-run`; the run log in `logs/` |
+| A **"⚠️ AI verifier unavailable"** notice | the LLM hit a quota/auth wall, so no verdict could be trusted. Nothing was alerted **and nothing was marked as seen** — those ads are re-checked automatically on the next run | `python main.py --check-llm` prints the exact HTTP error and every model your key can currently call |
+| A run that scraped **0 advertisements** | the portal refused this machine (403/WAF) or its markup changed | the run log: one line per source |
+| Fewer alerts than expected | cross-portal de-duplication had already alerted that vacancy from another portal | the `duplicate dropped … already seen via <source>` lines |
+
+The dangerous row is the second one: a verifier that fails silently turns every verdict into a regex
+guess, and the notify gate refuses guesses — so the pipeline reports success while delivering
+nothing. That is why an unverified verdict is never written to the state, and why a labelled
+degradation notice is sent instead of dead air.
+
+Health, in two commands:
+
+```bash
+python main.py --check-llm            # is the verifier alive, and on which model?
+python tools/healthcheck.py --dry-run # has a run actually completed recently?
+```
+
+---
+
 ## 1. Folder structure
 
 ```
@@ -225,6 +251,28 @@ key whose prefix belongs to a different provider (`sk-or-`, `gsk_`, `sk-`).
 - Free-tier prompts may be used to improve Google's products (the paid tier is not). The prompts
   contain only your profile summary and public job-ad text, no credentials.
 
+### Model names churn — and free quota is counted *per model*
+
+Both of these were hit live in Nov 2026:
+
+* **Retired names answer 404.** `gemini-2.5-flash` and `gemini-2.5-flash-lite` now return
+  *"no longer available to new users"*. `--check-llm` lists every model your key can actually
+  call; the default used here (`gemini-3-flash-preview`) was verified to answer **HTTP 200**.
+* **The free quota is small and per-model.** `gemini-3.8-flash` answered
+  `HTTP 429 — You exceeded your current quota` after a day of testing. A quota 429 is **not
+  transient** — retrying cannot lift a daily cap — so Job Sniper rotates models instead of
+  burning retry cycles:
+
+```ini
+LLM_MODEL=gemini-3-flash-preview
+LLM_FALLBACK_MODELS=gemini-3-flash-preview,gemini-2.5-pro   # tried in order; comma separated
+```
+
+Once every candidate is exhausted the run is declared **degraded**: the remaining ads fall back to
+the offline regex, nothing is recorded as seen, and you get a "⚠️ AI verifier unavailable" notice on
+Discord *and* email. `NOTIFY_ON_DEGRADED=false` silences that notice — not recommended, since that
+silence is what makes a monitor useless.
+
 ### Other providers
 
 Put the key in its provider-specific variable (or in the generic `LLM_API_KEY`):
@@ -272,6 +320,38 @@ Add one line (08:00 every day, logs appended):
 ```
 `run.sh` refuses to run twice within 6 hours (`MIN_INTERVAL_SECONDS`), so a duplicated cron
 entry cannot spam your Discord. Force a run with `./run.sh --force`.
+
+---
+
+### Where the runs actually happen (two runners, one shared state)
+
+Daily alerts come from two independent triggers, deliberately:
+
+1. **GitHub Actions** — `.github/workflows/job_sniper.yml`, `0 13 * * *` UTC (18:00 PKT).
+2. **This machine** — a Hermes cron job (`job-sniper: daily PK govt job scan`, id `29aaf64822f5`)
+   runs `~/.hermes/scripts/jobsniper_run.sh` daily at **20:00 PKT**. It exists because GitHub's
+   scheduler is best-effort (a run can be delayed, and one was observed sitting in `queued` for
+   minutes), and because this box reaches portals that refuse datacenter addresses:
+   `health.balochistan.gov.pk` answers **403** to runners but loads normally here.
+
+Both write the same `state/seen_jobs.json`. The local script pulls before scraping and pushes after,
+so a vacancy already alerted by one runner is not alerted again by the other, and `flock` stops two
+local runs overlapping. The push only happens when the box has a git credential
+(`git config credential.helper`); without one, the local state simply stays local — in which case
+keep just one runner active to avoid duplicate alerts.
+
+```bash
+hermes cron list                                  # the scheduled local job
+tail -f /root/job-sniper/logs/cron-$(date +%F).log  # what the last local run did
+```
+
+### The watchdog (silence is now impossible)
+
+`tools/healthcheck.py` runs after every local tick and alerts on Discord **and** email
+(rate-limited to one per 6h) when: no run has completed within 36 hours, the last two runs exited
+non-zero, or the newest run crashed before logging its summary. It exists because of a real
+incident — see "Read this first" above — in which a full day passed with no alert and no way to
+tell that apart from "no jobs today".
 
 ---
 
@@ -372,8 +452,9 @@ A typical day is 5-25 calls.
 | `LLM HTTP 400 … Please pass a valid API key` | Wrong/missing key, or a leftover key in `LLM_API_KEY`. Run `--check-llm`; blank `LLM_API_KEY`. |
 | `LLM HTTP 404` / "model not found" | The model name was retired. `--check-llm` lists every model your key can call; set `LLM_MODEL=<name>`. |
 | `LLM HTTP 403 permission denied` | Gemini API not enabled for that project, or the key belongs to a deleted project. |
-| `LLM HTTP 429` | Free-tier rate limit. The evaluator backs off and retries; lower `MAX_LLM_CALLS_PER_RUN` or run the cron less often. |
-| Verdicts say `Heuristic (no LLM)` | No key configured or the budget/network failed — check `python main.py --check-llm`. |
+| `LLM HTTP 429 … exceeded your current quota` | The free tier's **per-model** daily cap. Job Sniper rotates to `LLM_FALLBACK_MODELS`; when all are spent the run is marked degraded and tells you. Wait for the reset, list more models, or lower `MAX_LLM_CALLS_PER_RUN`. |
+| Verdicts say `Heuristic (no LLM)` | No key, exhausted quota, or a network failure — run `python main.py --check-llm`. Such verdicts are deliberately **not** saved to the state, and a degradation notice is sent. |
+| No alert for a job you can see on the portal | Was it ever scraped? `python main.py --sources <name> -v --dry-run`. If it was evaluated and rejected, the reason is in `reports/report-*.json`. |
 | `DISCORD_WEBHOOK_URL is not set` | Fill it in `.env`; test with `--test-notify`. |
 | `FPSC: needs a browser session` | `python -m playwright install chromium`, or install Google Chrome. |
 | FPSC returns 0 ads | The page layout changed. Run `python main.py --sources fpsc -v`; the regex fallback is logged as a warning. |
