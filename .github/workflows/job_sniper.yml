@@ -50,7 +50,7 @@ jobs:
       LLM_PROVIDER: ${{ vars.LLM_PROVIDER || 'gemini' }}
       LLM_MODEL: ${{ vars.LLM_MODEL || 'gemini-3.8-flash' }}
       MAX_LLM_CALLS_PER_RUN: ${{ vars.MAX_LLM_CALLS_PER_RUN || '60' }}
-      MAX_PDF_PAGES: ${{ vars.MAX_PDF_PAGES || '12' }}
+      MAX_PDF_PAGES: ${{ vars.MAX_PDF_PAGES || '30' }}   # full 24-page FPSC consolidated ads
       # the report/log files are uploaded as artefacts instead of committed
       LOG_LEVEL: INFO
 
