@@ -230,6 +230,38 @@ def prefilter(text: str, title: str = "") -> tuple[bool, str]:
 # =====================================================================
 #  Layer 3 (used by layer 2 when the LLM is unavailable)
 # =====================================================================
+def promise_score(posting) -> int:
+    """
+    Rank an advertisement for a limited verification budget.
+
+    Measured live on 2026-11-11: a full sweep found 125 advertisements while the free
+    tier allowed 60 verdicts, so the budget has to go to the most plausible candidates
+    first. This only *orders the queue* — it never decides anything, and nothing is lost
+    by ranking low: unverified advertisements are never recorded as seen, so they return
+    on the next run and coverage accumulates across days.
+    """
+    blob = f"{getattr(posting, 'title', '') or ''}\n{getattr(posting, 'raw_text', '') or ''}"
+    score = 0
+
+    scales = extract_scales(blob)
+    if scales:
+        top = max(scales)
+        score += 40 if top >= 16 else 30 if top >= 14 else 0
+
+    if re.search(r"commerce|business administration|marketing|e-?commerce|MBA|BBA|B\.?\s?Com",
+                 blob, re.I):
+        score += 25
+    if SUBJECT_ACCEPT_KEYWORDS.search(blob):
+        score += 20
+    if GENERIC_DEGREE_RE.search(blob):
+        score += 15
+    if STEM_KEYWORDS.search(blob):
+        score -= 20                    # named STEM/medical only — usually a reject
+    if getattr(posting, "attachments", None):
+        score += 5                     # the advertisement itself is attached
+    return score
+
+
 def heuristic(text: str, title: str = "") -> EligibilityResult:
     """Offline verdict from regexes only. Deliberately pessimistic."""
     blob = f"{title}\n{text or ''}"

@@ -273,6 +273,21 @@ the offline regex, nothing is recorded as seen, and you get a "⚠️ AI verifie
 Discord *and* email. `NOTIFY_ON_DEGRADED=false` silences that notice — not recommended, since that
 silence is what makes a monitor useless.
 
+### Capacity: the free tier verifies fewer ads than a sweep finds
+
+Measured: one full sweep found **125 advertisements** and the free tier allowed **60 verdicts**,
+then answered 429. That gap is handled rather than hidden:
+
+* the queue is **ranked** (`ai_filter.promise_score`), so a BPS-16+ commerce/marketing ad is
+  verified before a below-scale or STEM-only one;
+* anything unverified is **not written to the state**, so it returns on the next run — coverage
+  accumulates over days instead of the tail being dropped, and job deadlines are usually weeks out;
+* the "⚠️ AI verifier unavailable … 110 unchecked" notice tells you how much was left over.
+
+If you want a complete sweep in one run, either add models to `LLM_FALLBACK_MODELS`, use a paid key
+(a full sweep costs a few cents), or accept the multi-day accumulation. `MAX_LLM_CALLS_PER_RUN`
+caps the spend per run and defaults to 60.
+
 ### Other providers
 
 Put the key in its provider-specific variable (or in the generic `LLM_API_KEY`):

@@ -340,6 +340,16 @@ def run_once(args) -> dict:
     log.info("%d advertisement chunk(s) kept for evaluation (%d duplicate(s) total)",
              len(fresh), duplicate_count)
 
+    # The free verifier budget (~60 verdicts) is smaller than a full sweep (125
+    # advertisements on 2026-11-11), so rank the queue: the most plausible BPS-14+
+    # commerce/business ads get verified first, and anything left over is re-tried on
+    # the next run (it is never recorded as seen) — coverage accumulates across days
+    # instead of the tail being silently dropped.
+    if settings.llm_enabled and not args.no_llm and fresh:
+        fresh.sort(key=ai_filter.promise_score, reverse=True)
+        log.info("verification queue ranked by promise score; first up: %s",
+                 fresh[0].title[:60])
+
     # 4) evaluate ----------------------------------------------------------
     results: list[EligibilityResult] = []
     unverified: list[EligibilityResult] = []      # heuristic maybes, deliberately not pushed

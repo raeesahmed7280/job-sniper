@@ -11,3 +11,6 @@ __pycache__/
 *.pyc
 .venv/
 probe_*.py
+
+# flock file used by the local cron runner
+.run.lock

@@ -302,6 +302,26 @@ def test_verifier_resilience() -> None:
           not main_mod._is_held_back(EligibilityResult(eligible=False, title="Warder",
                                                       method="heuristic", reason="BPS-05")))
 
+    # limited budget: a full sweep (125 ads) exceeds the free tier's ~60 verdicts, so the
+    # most plausible advertisements must be verified first — and ranking must never
+    # decide anything, only order the queue
+    from models import JobPosting
+
+    def _post(title: str, text: str) -> JobPosting:
+        return JobPosting(source="test", title=title, url="https://example.invalid/x",
+                          raw_text=text)
+
+    commerce = _post("Assistant Manager (Marketing)",
+                     "BPS-17. MBA / MS Marketing or equivalent qualification.")
+    stem = _post("Assistant Engineer", "BPS-17. BSc Electrical Engineering required.")
+    junior = _post("Warder", "BPS-05. Matriculation required.")
+    check("commerce/BPS-17 outranks a STEM-only ad",
+          ai_filter.promise_score(commerce) > ai_filter.promise_score(stem))
+    check("commerce/BPS-17 outranks a below-scale ad",
+          ai_filter.promise_score(commerce) > ai_filter.promise_score(junior))
+    check("queue ranking preserves every advertisement (orders, never drops)",
+          len(sorted([commerce, stem, junior], key=ai_filter.promise_score, reverse=True)) == 3)
+
     # the degradation notice: built even when nothing looked like a match, and inert
     # when there is nothing to report
     sent = notifier.send_degraded([], "verifier unavailable", unrecorded=0,
