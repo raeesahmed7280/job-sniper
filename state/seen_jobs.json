@@ -531,46 +531,6 @@
    "notified": false,
    "method": "heuristic"
   },
-  "42c52d1c2a7e5610": {
-   "first_seen": "2026-11-11T18:18:42+00:00",
-   "last_seen": "2026-11-11T18:18:42+00:00",
-   "source": "fpsc",
-   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 1-3)",
-   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
-   "eligible": true,
-   "notified": false,
-   "method": "heuristic"
-  },
-  "d3a4206a8f6e6d3d": {
-   "first_seen": "2026-11-11T18:20:13+00:00",
-   "last_seen": "2026-11-11T18:20:13+00:00",
-   "source": "fpsc",
-   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 4-6)",
-   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
-   "eligible": true,
-   "notified": false,
-   "method": "heuristic"
-  },
-  "9aaebc6ff744bcd6": {
-   "first_seen": "2026-11-11T18:23:32+00:00",
-   "last_seen": "2026-11-11T18:23:32+00:00",
-   "source": "fpsc",
-   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 7-9)",
-   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
-   "eligible": true,
-   "notified": false,
-   "method": "heuristic"
-  },
-  "ee9001264e6c5027": {
-   "first_seen": "2026-11-11T18:25:38+00:00",
-   "last_seen": "2026-11-11T18:25:38+00:00",
-   "source": "fpsc",
-   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 10-12)",
-   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
-   "eligible": true,
-   "notified": false,
-   "method": "heuristic"
-  },
   "3e91f9fac684a78f": {
    "first_seen": "2026-11-11T18:26:56+00:00",
    "last_seen": "2026-11-11T18:26:56+00:00",
@@ -578,16 +538,6 @@
    "title": "Faisalabad Electric Supply Company Limited (FESCO) Career Opportunities",
    "url": "https://portal.nts.org.pk/Alldetail/MTAxMzk5",
    "eligible": false,
-   "notified": false,
-   "method": "heuristic"
-  },
-  "d66e6da505823a0a": {
-   "first_seen": "2026-11-11T18:30:58+00:00",
-   "last_seen": "2026-11-11T18:30:58+00:00",
-   "source": "nts",
-   "title": "Gujranwala Electric Power Company (GEPCO) Career Opportunities (Balochistan Quota)",
-   "url": "https://portal.nts.org.pk/Alldetail/MTAxNDAx",
-   "eligible": true,
    "notified": false,
    "method": "heuristic"
   },
