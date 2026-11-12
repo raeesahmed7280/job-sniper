@@ -90,6 +90,100 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "4b0158ff34c9281c": {
+   "first_seen": "2026-11-12T20:47:10+00:00",
+   "last_seen": "2026-11-12T20:47:10+00:00",
+   "source": "bpsc",
+   "title": "Addendum Dated 02-11-2026. Last date for submission of online application has been extended up to 17 November 2026.",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "deadline": "2026-11-17",
+   "eligible": false,
+   "notified": false,
+   "filtered": "notice/non-vacancy title"
+  },
+  "051fd2aec36f9d11": {
+   "first_seen": "2026-11-12T20:47:29+00:00",
+   "last_seen": "2026-11-12T20:47:29+00:00",
+   "source": "bpsc",
+   "title": "Corrigendum for the posts of Junior Inspector of Mines (B-17) and Mines Rescue Instructor (B-17) (03-09-2026)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "eligible": false,
+   "notified": false,
+   "filtered": "notice/non-vacancy title"
+  },
+  "df844c8b8fa3e462": {
+   "first_seen": "2026-11-12T20:47:29+00:00",
+   "last_seen": "2026-11-12T20:47:29+00:00",
+   "source": "bpsc",
+   "title": "Corrigendum for the post of Assistant Electric Inspector (10-July-2026)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "eligible": false,
+   "notified": false,
+   "filtered": "notice/non-vacancy title"
+  },
+  "5f1db90c74f68250": {
+   "first_seen": "2026-11-12T20:47:41+00:00",
+   "last_seen": "2026-11-12T20:47:41+00:00",
+   "source": "pnd",
+   "title": "GIS / IT Specialist",
+   "url": "https://pnd.balochistan.gov.pk/jobs",
+   "deadline": "2026-06-15",
+   "eligible": false,
+   "notified": false,
+   "filtered": "deadline passed"
+  },
+  "1cab7cdd9355be43": {
+   "first_seen": "2026-11-12T20:47:41+00:00",
+   "last_seen": "2026-11-12T20:47:41+00:00",
+   "source": "pnd",
+   "title": "Statistician / Data Analyst",
+   "url": "https://pnd.balochistan.gov.pk/jobs",
+   "deadline": "2026-06-15",
+   "eligible": false,
+   "notified": false,
+   "filtered": "deadline passed"
+  },
+  "9e02ce8f1d6a219b": {
+   "first_seen": "2026-11-12T20:48:10+00:00",
+   "last_seen": "2026-11-12T20:48:10+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 13-15)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "d63a6c0e8e39c292": {
+   "first_seen": "2026-11-12T20:48:42+00:00",
+   "last_seen": "2026-11-12T20:48:42+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 16-18)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "f33e09a410acc2e3": {
+   "first_seen": "2026-11-12T20:49:08+00:00",
+   "last_seen": "2026-11-12T20:49:08+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 22-24)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "18d08f9c61eb3021": {
+   "first_seen": "2026-11-12T20:49:12+00:00",
+   "last_seen": "2026-11-12T20:49:12+00:00",
+   "source": "njp",
+   "title": "Instructor",
+   "url": "https://njp.gov.pk/jobs/10600",
+   "scale": "BPS-16",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -193,6 +287,30 @@
   "50fdde0a6938662f": {
    "source": "nts",
    "title": "Shaheed Zulfikar Ali Bhutto Institute of Science and Technology SZABIST(Special Test for MS Programs-I))"
+  },
+  "98308c049cf8f498": {
+   "source": "pnd",
+   "title": "GIS / IT Specialist"
+  },
+  "38001141cb2330b4": {
+   "source": "pnd",
+   "title": "Statistician / Data Analyst"
+  },
+  "4eb820a681114e71": {
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 13-15)"
+  },
+  "ac94946ea1592c07": {
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 16-18)"
+  },
+  "ce89270aeb17184f": {
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 22-24)"
+  },
+  "12ff28c718611111": {
+   "source": "njp",
+   "title": "Instructor"
   }
  }
 }
