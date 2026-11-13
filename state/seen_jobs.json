@@ -184,6 +184,191 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "a1a158453c58055c": {
+   "first_seen": "2026-11-13T20:28:38+00:00",
+   "last_seen": "2026-11-13T20:28:38+00:00",
+   "source": "njp",
+   "title": "Assistant (Ministerial) BS-15 — FBS Wing",
+   "url": "https://njp.gov.pk/jobs/10645",
+   "scale": "BPS-15",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "7a91cde23fd12aec": {
+   "first_seen": "2026-11-13T20:28:49+00:00",
+   "last_seen": "2026-11-13T20:28:49+00:00",
+   "source": "njp",
+   "title": "Statistical Assistant BS-15 — PCO Wing",
+   "url": "https://njp.gov.pk/jobs/10644",
+   "scale": "BPS-15",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "1e07c0834f39ebdb": {
+   "first_seen": "2026-11-13T20:28:56+00:00",
+   "last_seen": "2026-11-13T20:28:56+00:00",
+   "source": "njp",
+   "title": "Stenotypist BS-14 — FBS Wing",
+   "url": "https://njp.gov.pk/jobs/10643",
+   "scale": "BPS-14",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "78b45c1f38777236": {
+   "first_seen": "2026-11-13T20:29:03+00:00",
+   "last_seen": "2026-11-13T20:29:03+00:00",
+   "source": "njp",
+   "title": "Statistical Assistant BS-15 — FBS Wing",
+   "url": "https://njp.gov.pk/jobs/10642",
+   "scale": "BPS-15",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "5620e1b4d2e83014": {
+   "first_seen": "2026-11-13T20:29:28+00:00",
+   "last_seen": "2026-11-13T20:29:28+00:00",
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 19-21)",
+   "url": "https://www.fpsc.gov.pk/Jobs?section=GR",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "df3ecc45e230ca31": {
+   "first_seen": "2026-11-13T20:29:35+00:00",
+   "last_seen": "2026-11-13T20:29:35+00:00",
+   "source": "bpsc",
+   "title": "Advertisement no 09-2026 (pages 1-3)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "43767ca0bd8be342": {
+   "first_seen": "2026-11-13T20:29:41+00:00",
+   "last_seen": "2026-11-13T20:29:41+00:00",
+   "source": "bpsc",
+   "title": "Advertisement no 09-2026 (pages 4)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "074c824dbfabc983": {
+   "first_seen": "2026-11-13T20:29:48+00:00",
+   "last_seen": "2026-11-13T20:29:48+00:00",
+   "source": "bpsc",
+   "title": "Advertisement No. 07/2026 (pages 1-3)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "732ed2baf538d65f": {
+   "first_seen": "2026-11-13T20:29:52+00:00",
+   "last_seen": "2026-11-13T20:29:52+00:00",
+   "source": "bpsc",
+   "title": "Advertisement No. 07/2026 (pages 4)",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "d4f0beba1f9abad3": {
+   "first_seen": "2026-11-13T20:29:55+00:00",
+   "last_seen": "2026-11-13T20:29:55+00:00",
+   "source": "blnjobs",
+   "title": "Ministry Of Commerce National Insurance Company Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/ministry-of-commerce-national-insurance-company-balochistan-quota-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "172a3519727366c4": {
+   "first_seen": "2026-11-13T20:30:02+00:00",
+   "last_seen": "2026-11-13T20:30:02+00:00",
+   "source": "njp",
+   "title": "Data Entry Operator BS-14 — FBS Wing",
+   "url": "https://njp.gov.pk/jobs/10646",
+   "scale": "BPS-14",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "2220887a3a5a8331": {
+   "first_seen": "2026-11-13T20:30:05+00:00",
+   "last_seen": "2026-11-13T20:30:05+00:00",
+   "source": "sbp",
+   "title": "SBP Memorial Chairs in Economics",
+   "url": "https://www.sbp.org.pk/careers/sbp-memorial-chairs-in-economics",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "4c951697b92a5d29": {
+   "first_seen": "2026-11-13T20:30:08+00:00",
+   "last_seen": "2026-11-13T20:30:08+00:00",
+   "source": "sbp",
+   "title": "Economic Analysts Training Scheme",
+   "url": "https://www.sbp.org.pk/careers/economic-analysts-training-scheme",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "8e7386d5993665ce": {
+   "first_seen": "2026-11-13T20:30:10+00:00",
+   "last_seen": "2026-11-13T20:30:10+00:00",
+   "source": "blnjobs",
+   "title": "Ministry of Economic Affairs Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/ministry-of-economic-affairs-balochistan-quota-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "2fe0a805a4c44b8c": {
+   "first_seen": "2026-11-13T20:30:12+00:00",
+   "last_seen": "2026-11-13T20:30:12+00:00",
+   "source": "blnjobs",
+   "title": "Balochistan Police Zhob Jobs 2026",
+   "url": "https://blnjobs.com/balochistan-police-zhob-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "b8f969e838d6d5b6": {
+   "first_seen": "2026-11-13T20:30:15+00:00",
+   "last_seen": "2026-11-13T20:30:15+00:00",
+   "source": "blnjobs",
+   "title": "Prime Ministers Office Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/prime-ministers-office-balochistan-quota-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "6f0f68772272dcfe": {
+   "first_seen": "2026-11-13T20:30:17+00:00",
+   "last_seen": "2026-11-13T20:30:17+00:00",
+   "source": "blnjobs",
+   "title": "Staff Welfare Organization Establishment Division Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/staff-welfare-organization-establishment-division-balochistan-quota-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "a2d0db4b75c60c0d": {
+   "first_seen": "2026-11-13T20:30:20+00:00",
+   "last_seen": "2026-11-13T20:30:20+00:00",
+   "source": "blnjobs",
+   "title": "Shaikh Zayed Hospital Lahore Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/shaikh-zayed-hospital-lahore-balochistan-quota-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -311,6 +496,70 @@
   "12ff28c718611111": {
    "source": "njp",
    "title": "Instructor"
+  },
+  "8bdfe61787fdf214": {
+   "source": "njp",
+   "title": "Assistant (Ministerial) BS-15 — FBS Wing"
+  },
+  "a21d88d28efd9e00": {
+   "source": "njp",
+   "title": "Statistical Assistant BS-15 — PCO Wing"
+  },
+  "227d584292fc5e20": {
+   "source": "njp",
+   "title": "Stenotypist BS-14 — FBS Wing"
+  },
+  "af5949568bf5ba20": {
+   "source": "njp",
+   "title": "Statistical Assistant BS-15 — FBS Wing"
+  },
+  "4c10bc6680790931": {
+   "source": "fpsc",
+   "title": "GR – Consolidated Advertisement No. 4/2026 (pages 19-21)"
+  },
+  "fc5320a658fcd8dc": {
+   "source": "bpsc",
+   "title": "Advertisement no 09-2026 (pages 1-3)"
+  },
+  "5580a6cde8989c14": {
+   "source": "bpsc",
+   "title": "Advertisement no 09-2026 (pages 4)"
+  },
+  "787527c9b991cd84": {
+   "source": "bpsc",
+   "title": "Advertisement No. 07/2026 (pages 1-3)"
+  },
+  "d002a042598bfc5f": {
+   "source": "bpsc",
+   "title": "Advertisement No. 07/2026 (pages 4)"
+  },
+  "439b487caa253807": {
+   "source": "blnjobs",
+   "title": "Ministry Of Commerce National Insurance Company Balochistan Quota Jobs 2026"
+  },
+  "514a8c86923a7186": {
+   "source": "njp",
+   "title": "Data Entry Operator BS-14 — FBS Wing"
+  },
+  "e3438a6017fa4ad1": {
+   "source": "blnjobs",
+   "title": "Ministry of Economic Affairs Balochistan Quota Jobs 2026"
+  },
+  "fb44cef083d354ee": {
+   "source": "blnjobs",
+   "title": "Balochistan Police Zhob Jobs 2026"
+  },
+  "f17e8712e65929c7": {
+   "source": "blnjobs",
+   "title": "Prime Ministers Office Balochistan Quota Jobs 2026"
+  },
+  "3beefe892a1c6065": {
+   "source": "blnjobs",
+   "title": "Staff Welfare Organization Establishment Division Balochistan Quota Jobs 2026"
+  },
+  "417fc5126d7b574b": {
+   "source": "blnjobs",
+   "title": "Shaikh Zayed Hospital Lahore Balochistan Quota Jobs 2026"
   }
  }
 }
