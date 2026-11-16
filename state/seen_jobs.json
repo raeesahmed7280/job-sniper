@@ -523,6 +523,50 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "1e6e9688194f6d14": {
+   "first_seen": "2026-11-16T22:56:04+00:00",
+   "last_seen": "2026-11-16T22:56:04+00:00",
+   "source": "ots",
+   "title": "OTS project 530",
+   "url": "https://ots.org.pk/project-view.php?pview=530",
+   "deadline": "2026-10-20",
+   "eligible": false,
+   "notified": false,
+   "filtered": "deadline passed"
+  },
+  "8a91cc4fe7fa192c": {
+   "first_seen": "2026-11-16T22:56:04+00:00",
+   "last_seen": "2026-11-16T22:56:04+00:00",
+   "source": "ots",
+   "title": "Open Testing Service (Pvt) Ltd. (",
+   "url": "https://ots.org.pk/project-view.php?pview=529",
+   "deadline": "2026-10-20",
+   "eligible": false,
+   "notified": false,
+   "filtered": "deadline passed"
+  },
+  "79b9e17336fd8006": {
+   "first_seen": "2026-11-16T22:56:04+00:00",
+   "last_seen": "2026-11-16T22:56:04+00:00",
+   "source": "ots",
+   "title": "OTS project 527",
+   "url": "https://ots.org.pk/project-view.php?pview=527",
+   "deadline": "2026-10-20",
+   "eligible": false,
+   "notified": false,
+   "filtered": "deadline passed"
+  },
+  "c4cca8c59e51b566": {
+   "first_seen": "2026-11-16T22:56:04+00:00",
+   "last_seen": "2026-11-16T22:56:04+00:00",
+   "source": "blnjobs",
+   "title": "Military Engineering Services Balochista Quota jobs 2026",
+   "url": "https://blnjobs.com/military-engineering-services-balochista-quota-jobs-2026/",
+   "deadline": "2026-11-14",
+   "eligible": false,
+   "notified": false,
+   "filtered": "deadline passed"
   }
  },
  "posts": {
@@ -774,6 +818,22 @@
   "1a1fdc2258011ba2": {
    "source": "blnjobs",
    "title": "Karachi Port Trust Balochistan Quota Jobs 2026"
+  },
+  "9cd55c9e0357c4ac": {
+   "source": "ots",
+   "title": "OTS project 530"
+  },
+  "3ab5deb6c22f80e8": {
+   "source": "ots",
+   "title": "Open Testing Service (Pvt) Ltd. ("
+  },
+  "3ab5deb6828e80e8": {
+   "source": "ots",
+   "title": "OTS project 527"
+  },
+  "86b66f31228855be": {
+   "source": "blnjobs",
+   "title": "Military Engineering Services Balochista Quota jobs 2026"
   }
  }
 }
