@@ -567,6 +567,126 @@
    "eligible": false,
    "notified": false,
    "filtered": "deadline passed"
+  },
+  "1ce909bf97336aab": {
+   "first_seen": "2026-11-17T21:42:49+00:00",
+   "last_seen": "2026-11-17T21:42:49+00:00",
+   "source": "nts",
+   "title": "Govt. Of The Punjab Specialized Healthcare & Medical Education Department, Sahiwal Institute of Cardiology - Vacant Position (Specialized Healthcare & Medical Education Department)",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxNDA2",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "19540d98d45de88c": {
+   "first_seen": "2026-11-17T21:42:56+00:00",
+   "last_seen": "2026-11-17T21:42:56+00:00",
+   "source": "nts",
+   "title": "Govt of the Punjab Health & Population Department, Health & Population Department Career Opportunities",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxNDAw",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "2f1789f7dd4ee661": {
+   "first_seen": "2026-11-17T21:42:59+00:00",
+   "last_seen": "2026-11-17T21:42:59+00:00",
+   "source": "blnjobs",
+   "title": "Multan Electric Power Company MEPCO Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/multan-electric-power-company-mepco-balochistan-quota-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "af6758ac48aa8171": {
+   "first_seen": "2026-11-17T21:43:02+00:00",
+   "last_seen": "2026-11-17T21:43:02+00:00",
+   "source": "blnjobs",
+   "title": "Faisalabad Electric Supply Company FESCO Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/faisalabad-electric-supply-company-fesco-balochistan-quota-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "60cf4a021fd9cc15": {
+   "first_seen": "2026-11-17T21:43:05+00:00",
+   "last_seen": "2026-11-17T21:43:05+00:00",
+   "source": "blnjobs",
+   "title": "National Institute of Health Islamabad Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/national-institute-of-health-islamabad-balochistan-quota-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "6ab94ac489b4de59": {
+   "first_seen": "2026-11-17T21:43:07+00:00",
+   "last_seen": "2026-11-17T21:43:07+00:00",
+   "source": "blnjobs",
+   "title": "Ministry of Planning Development and Special Intiatives Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/ministry-of-planning-development-and-special-intiatives-balochistan-quota-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "453ed493ecd9d21e": {
+   "first_seen": "2026-11-17T21:43:50+00:00",
+   "last_seen": "2026-11-17T21:43:50+00:00",
+   "source": "ots",
+   "title": "LAHORE ELECTRIC SUPPLY COMPANY LIMITED (LESCO), BALOCHISTAN QUOTA",
+   "url": "https://ots.org.pk/project-view.php?pview=534",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "b61c5cd57fed5dd8": {
+   "first_seen": "2026-11-17T21:43:53+00:00",
+   "last_seen": "2026-11-17T21:43:53+00:00",
+   "source": "nts",
+   "title": "Test of English for International Communication (TOEIC 2026-XII)",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxNDA4",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "1f1ab446cfee9c68": {
+   "first_seen": "2026-11-17T21:43:56+00:00",
+   "last_seen": "2026-11-17T21:43:56+00:00",
+   "source": "pts",
+   "title": "Provincial Assembly of Sindh (PAS) (565)",
+   "url": "https://www.pts.org.pk/Projects/Details/Vm0wd2VFMUdiRmhUV0d4V1YwZG9hRlV3Vm5kVU1WcHlWbFJHVm1KR2NIbFdWM1JMVlVaV1ZVMUVhejA9",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "6e53c4ece07d8244": {
+   "first_seen": "2026-11-17T21:43:59+00:00",
+   "last_seen": "2026-11-17T21:43:59+00:00",
+   "source": "pts",
+   "title": "State Life Insurance Corporation of Pakistan (SLIC-PAK) (562)",
+   "url": "https://www.pts.org.pk/Projects/Details/Vm0wd2VFMUdiRmhUV0d4V1YwZG9hRlV3Vm5kVU1WcHpWbTVrVm1KR2NIbFdWM1JMVlVaV1ZVMUVhejA9",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "fc727ecef62d53ba": {
+   "first_seen": "2026-11-17T21:44:02+00:00",
+   "last_seen": "2026-11-17T21:44:02+00:00",
+   "source": "pts",
+   "title": "State Life Insurance Corporation of Pakistan (SLIC-PAK) (561)",
+   "url": "https://www.pts.org.pk/Projects/Details/Vm0wd2VFMUdiRmhUV0d4V1YwZG9hRlV3V2t0WFJteHpWV3hrVm1KR2NIbFdWM1JMVlVaV1ZVMUVhejA9",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "8cae1bfafcf17f20": {
+   "first_seen": "2026-11-17T21:44:05+00:00",
+   "last_seen": "2026-11-17T21:44:05+00:00",
+   "source": "sbp",
+   "title": "Cyber Security Department",
+   "url": "https://www.sbp.org.pk/careers/cyber-security-department-2026",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -834,6 +954,42 @@
   "86b66f31228855be": {
    "source": "blnjobs",
    "title": "Military Engineering Services Balochista Quota jobs 2026"
+  },
+  "a8dbab185347b7ef": {
+   "source": "nts",
+   "title": "Govt of the Punjab Health & Population Department, Health & Population Department Career Opportunities"
+  },
+  "19adf4110df43e1d": {
+   "source": "blnjobs",
+   "title": "Multan Electric Power Company MEPCO Balochistan Quota Jobs 2026"
+  },
+  "67fea494256ebf65": {
+   "source": "blnjobs",
+   "title": "Faisalabad Electric Supply Company FESCO Balochistan Quota Jobs 2026"
+  },
+  "b3fc4d183c702a61": {
+   "source": "blnjobs",
+   "title": "National Institute of Health Islamabad Balochistan Quota Jobs 2026"
+  },
+  "37f978064eb97e6b": {
+   "source": "blnjobs",
+   "title": "Ministry of Planning Development and Special Intiatives Balochistan Quota Jobs 2026"
+  },
+  "f89f4c808249afc0": {
+   "source": "ots",
+   "title": "LAHORE ELECTRIC SUPPLY COMPANY LIMITED (LESCO), BALOCHISTAN QUOTA"
+  },
+  "99ddae30897a7687": {
+   "source": "nts",
+   "title": "Test of English for International Communication (TOEIC 2026-XII)"
+  },
+  "ec03ca51122521f5": {
+   "source": "pts",
+   "title": "State Life Insurance Corporation of Pakistan (SLIC-PAK) (562)"
+  },
+  "6c41ee21362401f2": {
+   "source": "pts",
+   "title": "State Life Insurance Corporation of Pakistan (SLIC-PAK) (561)"
   }
  }
 }
