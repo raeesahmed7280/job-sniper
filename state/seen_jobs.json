@@ -687,6 +687,48 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "304acf971f4084a6": {
+   "first_seen": "2026-11-18T21:17:31+00:00",
+   "last_seen": "2026-11-18T21:17:31+00:00",
+   "source": "ots",
+   "title": "Pakistan Reinsurance Company Limited (PRCL)",
+   "url": "https://ots.org.pk/project-view.php?pview=531",
+   "deadline": "2026-11-16",
+   "scale": "Head of Retrocession (MSPS/BPS-7); Head of Risk Management (MSPS/BPS-6)",
+   "eligible": false,
+   "notified": false,
+   "filtered": "deadline passed"
+  },
+  "83a8eace24e5bf02": {
+   "first_seen": "2026-11-18T21:17:34+00:00",
+   "last_seen": "2026-11-18T21:17:34+00:00",
+   "source": "blnjobs",
+   "title": "NationalGrid Balochistan Quota Jobs 2026",
+   "url": "https://blnjobs.com/nationalgrid-balochistan-quota-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "0e24697af1379c75": {
+   "first_seen": "2026-11-18T21:17:38+00:00",
+   "last_seen": "2026-11-18T21:17:38+00:00",
+   "source": "sbp",
+   "title": "Economic Analysts Training Scheme (EATS) - 7th Batch",
+   "url": "https://www.sbp.org.pk/careers/economic-analysts-training-scheme-eats-7th-batch",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "dbde1d221ed72f11": {
+   "first_seen": "2026-11-18T21:17:45+00:00",
+   "last_seen": "2026-11-18T21:17:45+00:00",
+   "source": "sbp",
+   "title": "State Bank Officers Training Scheme (SBOTS) - 29th Batch",
+   "url": "https://www.sbp.org.pk/careers/state-bank-officers-training-scheme-sbots-29th-batch",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -990,6 +1032,14 @@
   "6c41ee21362401f2": {
    "source": "pts",
    "title": "State Life Insurance Corporation of Pakistan (SLIC-PAK) (561)"
+  },
+  "f8db42c9801ae3ea": {
+   "source": "ots",
+   "title": "Pakistan Reinsurance Company Limited (PRCL)"
+  },
+  "23bd64020e7abddc": {
+   "source": "blnjobs",
+   "title": "NationalGrid Balochistan Quota Jobs 2026"
   }
  }
 }
