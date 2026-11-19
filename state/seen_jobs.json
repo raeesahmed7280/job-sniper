@@ -729,6 +729,116 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "c6f15b45e03d73ed": {
+   "first_seen": "2026-11-19T21:21:00+00:00",
+   "last_seen": "2026-11-19T21:21:00+00:00",
+   "source": "health",
+   "title": "Advertisement of vacant posts MNCH Quetta (pages 1-3)",
+   "url": "https://health.balochistan.gov.pk/jobs",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "1c900f9c641472fa": {
+   "first_seen": "2026-11-19T21:21:18+00:00",
+   "last_seen": "2026-11-19T21:21:18+00:00",
+   "source": "nts",
+   "title": "National Aptitude Test, NAT-XII 2026",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxNDE4",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "40146bef498798bf": {
+   "first_seen": "2026-11-19T21:21:38+00:00",
+   "last_seen": "2026-11-19T21:21:38+00:00",
+   "source": "sbp",
+   "title": "Raast Payments Pakistan (Private) Limited",
+   "url": "https://www.sbp.org.pk/careers/raast-payments-pakistan-private-limited-2026",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "c1122fbc85daea03": {
+   "first_seen": "2026-11-19T21:21:54+00:00",
+   "last_seen": "2026-11-19T21:21:54+00:00",
+   "source": "sbp",
+   "title": "External Communications Department",
+   "url": "https://www.sbp.org.pk/careers/data-analyst-media-monitoring",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "caaa0b3f3ab2b7c0": {
+   "first_seen": "2026-11-19T21:22:17+00:00",
+   "last_seen": "2026-11-19T21:22:17+00:00",
+   "source": "sbp",
+   "title": "Digital Innovations & Settlements Department (Contractual)",
+   "url": "https://www.sbp.org.pk/careers/digital-innovations-settlements-department-contractual",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "6961a4fa2dc7c129": {
+   "first_seen": "2026-11-19T21:22:40+00:00",
+   "last_seen": "2026-11-19T21:22:40+00:00",
+   "source": "sbp",
+   "title": "Digital Innovations & Settlements Department",
+   "url": "https://www.sbp.org.pk/careers/digital-innovations-settlements-department",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "62b7d68e497cac84": {
+   "first_seen": "2026-11-19T21:22:58+00:00",
+   "last_seen": "2026-11-19T21:22:58+00:00",
+   "source": "sbp",
+   "title": "External Communications Department (ECD)",
+   "url": "https://www.sbp.org.pk/careers/external-communications-department-ecd",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "aa176e42629d47ef": {
+   "first_seen": "2026-11-19T21:23:14+00:00",
+   "last_seen": "2026-11-19T21:23:14+00:00",
+   "source": "sbp",
+   "title": "Chief Technology Officer, Raast Payments Pakistan, Karachi",
+   "url": "https://www.sbp.org.pk/careers/chief-technology-officer-raast-payments-pakistan-karachi",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "4bf6f9f6aac37239": {
+   "first_seen": "2026-11-19T21:23:35+00:00",
+   "last_seen": "2026-11-19T21:23:35+00:00",
+   "source": "sbp",
+   "title": "Raast Payments Pakistan, Karachi (Contractual)",
+   "url": "https://www.sbp.org.pk/careers/raast-payments-pakistan-karachi-contractual",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "2c32dc0d5078c76a": {
+   "first_seen": "2026-11-19T21:23:56+00:00",
+   "last_seen": "2026-11-19T21:23:56+00:00",
+   "source": "sbp",
+   "title": "Banking Policy & Regulations Department",
+   "url": "https://www.sbp.org.pk/careers/banking-policy-regulations-department-2026",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "6032626eca846eeb": {
+   "first_seen": "2026-11-19T21:24:19+00:00",
+   "last_seen": "2026-11-19T21:24:19+00:00",
+   "source": "sbp",
+   "title": "Payment Systems Policy & Oversight Department (Contractual)",
+   "url": "https://www.sbp.org.pk/careers/payment-systems-policy-oversight-department-contractual",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -1040,6 +1150,18 @@
   "23bd64020e7abddc": {
    "source": "blnjobs",
    "title": "NationalGrid Balochistan Quota Jobs 2026"
+  },
+  "21560b5302dfeb0d": {
+   "source": "health",
+   "title": "Advertisement of vacant posts MNCH Quetta (pages 1-3)"
+  },
+  "d1f51e16691a6e27": {
+   "source": "nts",
+   "title": "National Aptitude Test, NAT-XII 2026"
+  },
+  "aede0500cd12d1ce": {
+   "source": "sbp",
+   "title": "Chief Technology Officer, Raast Payments Pakistan, Karachi"
   }
  }
 }
