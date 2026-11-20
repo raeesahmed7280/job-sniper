@@ -839,6 +839,126 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "ec686436dcc0879d": {
+   "first_seen": "2026-11-20T21:02:57+00:00",
+   "last_seen": "2026-11-20T21:02:57+00:00",
+   "source": "bpsc",
+   "title": "Addendum Dated 20-11-2026.",
+   "url": "https://bpsc.gob.pk/BPSC/pages?jobs",
+   "eligible": false,
+   "notified": false,
+   "filtered": "notice/non-vacancy title"
+  },
+  "b8709b136dcb7119": {
+   "first_seen": "2026-11-20T21:03:20+00:00",
+   "last_seen": "2026-11-20T21:03:20+00:00",
+   "source": "njp",
+   "title": "Assistant Lineman",
+   "url": "https://njp.gov.pk/jobs/10593",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "8c4c5ecd4052ab69": {
+   "first_seen": "2026-11-20T21:03:22+00:00",
+   "last_seen": "2026-11-20T21:03:22+00:00",
+   "source": "njp",
+   "title": "Assistant Sub Station Attendant",
+   "url": "https://njp.gov.pk/jobs/10592",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "de6becddc28850b2": {
+   "first_seen": "2026-11-20T21:03:24+00:00",
+   "last_seen": "2026-11-20T21:03:24+00:00",
+   "source": "njp",
+   "title": "Sub Station Attendant",
+   "url": "https://njp.gov.pk/jobs/10591",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "6fb2e2fab80532a0": {
+   "first_seen": "2026-11-20T21:03:26+00:00",
+   "last_seen": "2026-11-20T21:03:26+00:00",
+   "source": "blnjobs",
+   "title": "Home Department Balochistan Jobs 2026",
+   "url": "https://blnjobs.com/home-department-balochistan-jobs-2026-3/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "f0d2422b293b1e9e": {
+   "first_seen": "2026-11-20T21:03:29+00:00",
+   "last_seen": "2026-11-20T21:03:29+00:00",
+   "source": "sbp",
+   "title": "Payment Systems Policy & Oversight Department",
+   "url": "https://www.sbp.org.pk/careers/payment-systems-policy-oversight-department",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "b444aefffa6d07c6": {
+   "first_seen": "2026-11-20T21:03:32+00:00",
+   "last_seen": "2026-11-20T21:03:32+00:00",
+   "source": "sbp",
+   "title": "Zahid Hussain Post Doctoral Research Fellowship Program at State Bank of Pakistan Zahid Hussain Post Doctoral Research",
+   "url": "https://www.sbp.org.pk/careers/zahid-hussain-post-doctoral-research-fellowship-program-at-state-bank-of-pakistan",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "9676cd79cd3aa0f0": {
+   "first_seen": "2026-11-20T21:03:35+00:00",
+   "last_seen": "2026-11-20T21:03:35+00:00",
+   "source": "sbp",
+   "title": "CAREERS, INTERNSHIPS & SCHOLARSHIPS",
+   "url": "https://www.sbp.org.pk/careers/careers-internships-scholarships",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "f4217b61eed6502f": {
+   "first_seen": "2026-11-20T21:03:38+00:00",
+   "last_seen": "2026-11-20T21:03:38+00:00",
+   "source": "sbp",
+   "title": "Digital Innovation & Settlements Department (DI&SD)",
+   "url": "https://www.sbp.org.pk/careers/digital-innovation-settlements-department-disd",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "36fc38981331879b": {
+   "first_seen": "2026-11-20T21:03:41+00:00",
+   "last_seen": "2026-11-20T21:03:41+00:00",
+   "source": "sbp",
+   "title": "Statistical Officers Training Scheme (SOTS) 9th Batch",
+   "url": "https://www.sbp.org.pk/careers/statistical-officers-training-scheme-sots-9th-batch",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "e787c93359971655": {
+   "first_seen": "2026-11-20T21:03:43+00:00",
+   "last_seen": "2026-11-20T21:03:50+00:00",
+   "source": "sbp",
+   "title": "Statistical Officers Training Scheme",
+   "url": "https://www.sbp.org.pk/careers/statistical-officers-training-scheme-sots",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "7785376c168eb8ac": {
+   "first_seen": "2026-11-20T21:03:46+00:00",
+   "last_seen": "2026-11-20T21:03:46+00:00",
+   "source": "sbp",
+   "title": "Lateral Contractual Hiring",
+   "url": "https://www.sbp.org.pk/careers/lateral-contractual-hiring",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -1162,6 +1282,26 @@
   "aede0500cd12d1ce": {
    "source": "sbp",
    "title": "Chief Technology Officer, Raast Payments Pakistan, Karachi"
+  },
+  "38d53d02d93569b5": {
+   "source": "njp",
+   "title": "Assistant Lineman"
+  },
+  "01b52e865911c9b2": {
+   "source": "njp",
+   "title": "Assistant Sub Station Attendant"
+  },
+  "bbfc2e86d9a1d993": {
+   "source": "njp",
+   "title": "Sub Station Attendant"
+  },
+  "2344f76d0a0fa21e": {
+   "source": "blnjobs",
+   "title": "Home Department Balochistan Jobs 2026"
+  },
+  "c74a300842526235": {
+   "source": "sbp",
+   "title": "Zahid Hussain Post Doctoral Research Fellowship Program at State Bank of Pakistan Zahid Hussain Post Doctoral Research"
   }
  }
 }
