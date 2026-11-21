@@ -959,6 +959,16 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "3a8872b23af57f7c": {
+   "first_seen": "2026-11-21T20:04:07+00:00",
+   "last_seen": "2026-11-21T20:04:07+00:00",
+   "source": "ots",
+   "title": "Open Testing Service (Pvt) Ltd. (",
+   "url": "https://ots.org.pk/project-view.php?pview=529",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
