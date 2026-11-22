@@ -969,6 +969,26 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "730328eb20a7ff38": {
+   "first_seen": "2026-11-22T20:17:15+00:00",
+   "last_seen": "2026-11-22T20:17:15+00:00",
+   "source": "blnjobs",
+   "title": "School Education Department Balochistan Jobs 2026",
+   "url": "https://blnjobs.com/school-education-department-balochistan-jobs-2026-3/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "425fbfeffc9b02a5": {
+   "first_seen": "2026-11-22T20:17:18+00:00",
+   "last_seen": "2026-11-22T20:17:18+00:00",
+   "source": "nadra",
+   "title": "Director (Data Analytics & Visualization)",
+   "url": "https://careers.nadra.gov.pk/JobListing/JobDetail?VacancyId=CfDJ8Ngr6qXmB2JIkqcNkUXcnSs4enryEhCRjD8EpZWkPvzGbqrsnMysOb2sdZL2WckHZGknK152ERD4cZH5H52TPugSsGCavLhCh2R06VoUOUQcGwqQjct2oNJP0VwBszSUHA",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -1312,6 +1332,10 @@
   "c74a300842526235": {
    "source": "sbp",
    "title": "Zahid Hussain Post Doctoral Research Fellowship Program at State Bank of Pakistan Zahid Hussain Post Doctoral Research"
+  },
+  "f0842d640990e083": {
+   "source": "blnjobs",
+   "title": "School Education Department Balochistan Jobs 2026"
   }
  }
 }
