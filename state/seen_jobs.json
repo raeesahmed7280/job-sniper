@@ -989,6 +989,38 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "ea23d727271b1708": {
+   "first_seen": "2026-11-24T00:43:56+00:00",
+   "last_seen": "2026-11-24T00:43:56+00:00",
+   "source": "njp",
+   "title": "Assistant",
+   "url": "https://njp.gov.pk/jobs/10659",
+   "scale": "BPS-15",
+   "eligible": true,
+   "notified": false,
+   "method": "llm"
+  },
+  "e884212e9150c18d": {
+   "first_seen": "2026-11-24T00:44:05+00:00",
+   "last_seen": "2026-11-24T00:44:05+00:00",
+   "source": "njp",
+   "title": "High School Teacher KPT PS-7",
+   "url": "https://njp.gov.pk/jobs/10504",
+   "scale": "BPS-15",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "3b921d26261a84d1": {
+   "first_seen": "2026-11-24T00:44:08+00:00",
+   "last_seen": "2026-11-24T00:44:08+00:00",
+   "source": "nadra",
+   "title": "Assistant Director (Projects Compliance)",
+   "url": "https://careers.nadra.gov.pk/JobListing/JobDetail?VacancyId=CfDJ8Ngr6qXmB2JIkqcNkUXcnSvlAITXHovHRgMS1FyxFLomEi8S0_aiM5ydn-lRoPJ4kTci-X7dqewd2J2swPCMy57o_rKB5xfeIx5f_gNdev3D_POVeCwVWH7SVqyzjVTbrg",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -1006,6 +1038,11 @@
    "source": "nts",
    "title": "Assistant Manager (CS) / Revenue Officer (RO)",
    "first_seen": "2026-11-11T21:00:09+00:00"
+  },
+  "42c4bb899ce3f13f": {
+   "source": "njp",
+   "title": "Assistant",
+   "first_seen": "2026-11-24T00:44:08+00:00"
   }
  },
  "fingerprints": {
@@ -1336,6 +1373,14 @@
   "f0842d640990e083": {
    "source": "blnjobs",
    "title": "School Education Department Balochistan Jobs 2026"
+  },
+  "398e338586205ea1": {
+   "source": "njp",
+   "title": "Assistant"
+  },
+  "2a47acaab8c1311b": {
+   "source": "njp",
+   "title": "High School Teacher KPT PS-7"
   }
  }
 }
