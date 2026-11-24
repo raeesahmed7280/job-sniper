@@ -1021,6 +1021,27 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "381e4526b7a965c4": {
+   "first_seen": "2026-11-24T23:02:37+00:00",
+   "last_seen": "2026-11-24T23:02:37+00:00",
+   "source": "njp",
+   "title": "Diver Cum under water",
+   "url": "https://njp.gov.pk/jobs/10667",
+   "scale": "BPS-15",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "f8594d9827a689eb": {
+   "first_seen": "2026-11-24T23:02:40+00:00",
+   "last_seen": "2026-11-24T23:02:40+00:00",
+   "source": "nadra",
+   "title": "Executive (Internal Audit/ Compliance) - NTL",
+   "url": "https://careers.nadra.gov.pk/JobListing/JobDetail?VacancyId=CfDJ8Ngr6qXmB2JIkqcNkUXcnSssuR872A7abgNobxYPBsQHOuhGSWktIb_JSYLg_BkatS-Un4wZ3i6vGIyk5FDFNDFM5aZ1SWv3dWCkBixdN7AB-0oHy8WXF-TOmJCZ2wf7fQ",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -1381,6 +1402,10 @@
   "2a47acaab8c1311b": {
    "source": "njp",
    "title": "High School Teacher KPT PS-7"
+  },
+  "306237ea18a9f31b": {
+   "source": "njp",
+   "title": "Diver Cum under water"
   }
  }
 }
