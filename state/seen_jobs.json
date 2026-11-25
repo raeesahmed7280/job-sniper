@@ -1042,6 +1042,26 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "799c3073c8bc2839": {
+   "first_seen": "2026-11-25T22:16:35+00:00",
+   "last_seen": "2026-11-25T22:16:35+00:00",
+   "source": "nts",
+   "title": "Bright Future College of Nursing & Allied Health Sciences Karachi - BFCON (Admission 2026-27)",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxNDE0",
+   "eligible": false,
+   "notified": false,
+   "filtered": "names an excluded discipline with no generic/related alternative"
+  },
+  "65bac0de76fbb20c": {
+   "first_seen": "2026-11-25T22:16:40+00:00",
+   "last_seen": "2026-11-25T22:16:40+00:00",
+   "source": "blnjobs",
+   "title": "Clean Drinking Water Project Balochistan Jobs 2026",
+   "url": "https://blnjobs.com/clean-drinking-water-project-balochistan-jobs-2026-2/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -1406,6 +1426,14 @@
   "306237ea18a9f31b": {
    "source": "njp",
    "title": "Diver Cum under water"
+  },
+  "c2f7ee5c691a6228": {
+   "source": "nts",
+   "title": "Bright Future College of Nursing & Allied Health Sciences Karachi - BFCON (Admission 2026-27)"
+  },
+  "8a12ff911d6dc5c4": {
+   "source": "blnjobs",
+   "title": "Clean Drinking Water Project Balochistan Jobs 2026"
   }
  }
 }
