@@ -1062,6 +1062,37 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "ce5fbc93e04da323": {
+   "first_seen": "2026-11-26T22:15:04+00:00",
+   "last_seen": "2026-11-26T22:15:04+00:00",
+   "source": "ots",
+   "title": "LAHORE ELECTRIC SUPPLY COMPANY LIMITED (LESCO), BALOCHISTAN QUOTA",
+   "url": "https://ots.org.pk/project-view.php?pview=534",
+   "deadline": "2026-11-24",
+   "eligible": false,
+   "notified": false,
+   "filtered": "deadline passed"
+  },
+  "72f9a67d21fa0f3b": {
+   "first_seen": "2026-11-26T22:15:17+00:00",
+   "last_seen": "2026-11-26T22:15:17+00:00",
+   "source": "nts",
+   "title": "Govt of the Punjab Health & Population Department, CAREER OPPORTUNITIES AT \"HEALTHCARE SERVICES IMPLEMENTATION UNIT (HSIU)\"",
+   "url": "https://portal.nts.org.pk/Alldetail/MTAxNDA3",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "d22d07ccbc61e7d9": {
+   "first_seen": "2026-11-26T22:15:21+00:00",
+   "last_seen": "2026-11-26T22:15:21+00:00",
+   "source": "nadra",
+   "title": "Director (Public Information Officer)",
+   "url": "https://careers.nadra.gov.pk/JobListing/JobDetail?VacancyId=CfDJ8Ngr6qXmB2JIkqcNkUXcnSshoN5cPrSdVCIYUrB9pbPVc2zw5_l9mYaITbPxwExta1KrVM__ORf188_H8B-7gdXo4mMCY4Q0s0vB19sMHZm02PZPclkusN7-LaldCY4gMQ",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -1434,6 +1465,10 @@
   "8a12ff911d6dc5c4": {
    "source": "blnjobs",
    "title": "Clean Drinking Water Project Balochistan Jobs 2026"
+  },
+  "63b58c5cb83f4628": {
+   "source": "nts",
+   "title": "Govt of the Punjab Health & Population Department, CAREER OPPORTUNITIES AT \"HEALTHCARE SERVICES IMPLEMENTATION UNIT (HSI"
   }
  }
 }
