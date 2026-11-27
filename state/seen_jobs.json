@@ -1093,6 +1093,77 @@
    "eligible": false,
    "notified": false,
    "method": "llm"
+  },
+  "d9ca17bf0739984c": {
+   "first_seen": "2026-11-27T21:56:35+00:00",
+   "last_seen": "2026-11-27T21:56:35+00:00",
+   "source": "ots",
+   "title": "Central Power Purchasing Agency (Guarantee) Limited (CPPA-G) HeadHunting",
+   "url": "https://ots.org.pk/project-view.php?pview=532",
+   "deadline": "2026-11-25",
+   "eligible": false,
+   "notified": false,
+   "filtered": "deadline passed"
+  },
+  "d463b09d85f716ba": {
+   "first_seen": "2026-11-27T21:56:38+00:00",
+   "last_seen": "2026-11-27T21:56:38+00:00",
+   "source": "blnjobs",
+   "title": "Manzil Organization Balochistan Jobs 2026",
+   "url": "https://blnjobs.com/manzil-organization-balochistan-jobs-2026/",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "34bda73e65223925": {
+   "first_seen": "2026-11-27T21:56:40+00:00",
+   "last_seen": "2026-11-27T21:56:40+00:00",
+   "source": "nadra",
+   "title": "Deputy Assistant Director (Internal Audit) - NTL",
+   "url": "https://careers.nadra.gov.pk/JobListing/JobDetail?VacancyId=CfDJ8Ngr6qXmB2JIkqcNkUXcnStCtgEoAmPcY7zSJDVos1zVCn-T-doePeMuz0BNcC8N_Fzpf7Is-3fP9LX_7XD-_eGLdlxPcfJ3Ac1z4EaGQgNeBgvpXxEt-sHMGbocGqgzIw",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "da617e22d0577f64": {
+   "first_seen": "2026-11-27T21:56:43+00:00",
+   "last_seen": "2026-11-27T21:56:43+00:00",
+   "source": "nadra",
+   "title": "Assistant Director (GRC Policy & Training)",
+   "url": "https://careers.nadra.gov.pk/JobListing/JobDetail?VacancyId=CfDJ8Ngr6qXmB2JIkqcNkUXcnSu2RhIE1K1oTEylvrLLPLm3LKmovVggjpDf2OykYnUp2VTt6e9eN8gaI2X98KCCHWSXLBMJNwO9W1wYJAkeb9zBSizPERNhMyT325ILxKI1Pg",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "e99321ec78e4f10c": {
+   "first_seen": "2026-11-27T21:56:46+00:00",
+   "last_seen": "2026-11-27T21:56:46+00:00",
+   "source": "nadra",
+   "title": "Deputy Director (GRC Audit & Compliance)",
+   "url": "https://careers.nadra.gov.pk/JobListing/JobDetail?VacancyId=CfDJ8Ngr6qXmB2JIkqcNkUXcnSuwnYcsLfVXP1piZJxCRurg1WznLG1BDrIIzUNeMEp04J_ZKF_MRariA_WmIxWlN6CnAOSfHmwUTge9Dtf9r4U6hESjnr8d9e0PVlY_tAJ13g",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "7038db07eda5933e": {
+   "first_seen": "2026-11-27T21:56:49+00:00",
+   "last_seen": "2026-11-27T21:56:49+00:00",
+   "source": "nadra",
+   "title": "Deputy Assistant Director (Database Administrator)",
+   "url": "https://careers.nadra.gov.pk/JobListing/JobDetail?VacancyId=CfDJ8Ngr6qXmB2JIkqcNkUXcnSuSlDDPkcKFyWhXJfRgaAjm9oAkdN8cgpc7q--rQdQ2jW1o0GrbIbdnbMW9wyazLiySAfoZbPuvlwloZeQEa9r5WfL4gizVD3PQJx8qzB5Lmg",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
+  },
+  "8239339d21fce23a": {
+   "first_seen": "2026-11-27T21:56:52+00:00",
+   "last_seen": "2026-11-27T21:56:52+00:00",
+   "source": "nadra",
+   "title": "Assistant Director (Data Modeler)",
+   "url": "https://careers.nadra.gov.pk/JobListing/JobDetail?VacancyId=CfDJ8Ngr6qXmB2JIkqcNkUXcnSssfHXor4F0SEr4ji714eHYo720Ik60THdaekOqao6wsEPA8hr0PPJZFghHEEn4E8a6JTItKJfjHcDqw6zP4ufN1m1d4DdxVv7YAq2CogBvNg",
+   "eligible": false,
+   "notified": false,
+   "method": "llm"
   }
  },
  "posts": {
@@ -1469,6 +1540,26 @@
   "63b58c5cb83f4628": {
    "source": "nts",
    "title": "Govt of the Punjab Health & Population Department, CAREER OPPORTUNITIES AT \"HEALTHCARE SERVICES IMPLEMENTATION UNIT (HSI"
+  },
+  "7b7762df805fc3d2": {
+   "source": "ots",
+   "title": "Central Power Purchasing Agency (Guarantee) Limited (CPPA-G) HeadHunting"
+  },
+  "f762043f3b2a1346": {
+   "source": "blnjobs",
+   "title": "Manzil Organization Balochistan Jobs 2026"
+  },
+  "7fb942165930fc09": {
+   "source": "nadra",
+   "title": "Deputy Assistant Director (Internal Audit) - NTL"
+  },
+  "ee897507d383d62c": {
+   "source": "nadra",
+   "title": "Deputy Director (GRC Audit & Compliance)"
+  },
+  "d42bfd75e613c22e": {
+   "source": "nadra",
+   "title": "Deputy Assistant Director (Database Administrator)"
   }
  }
 }
